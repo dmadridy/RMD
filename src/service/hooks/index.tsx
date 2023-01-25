@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 //Types
-import { RequestType } from '../utils/types';
+import { RequestType } from '../../Services/utils/types';
 
 export const useTrending = () => {
   return useQuery({

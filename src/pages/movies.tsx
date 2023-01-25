@@ -1,5 +1,5 @@
 //Hooks
-import { usePopularMovies } from '../Services/hooks';
+import { usePopularMovies } from '../service/hooks';
 
 const Movies = () => {
   const { data, error, isLoading } = usePopularMovies();
