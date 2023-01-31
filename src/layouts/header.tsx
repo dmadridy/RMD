@@ -10,8 +10,8 @@ const Header = () => {
         </NavLink>
       </div>
       <div>
-        <NavLink to='/movies'>Movies</NavLink>
-        <NavLink to='/tv-shows'>TV Shows</NavLink>
+        <NavLink to='movies'>Movies</NavLink>
+        <NavLink to='tv-shows'>TV Shows</NavLink>
       </div>
     </header>
   );

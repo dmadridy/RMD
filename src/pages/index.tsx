@@ -1,5 +1,5 @@
 //Hooks
-import { useTrending } from '../service/hooks';
+import { useTrending } from '../services/hooks';
 
 const Home: React.FC = () => {
   const { data, error, isLoading } = useTrending();

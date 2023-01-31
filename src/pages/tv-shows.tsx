@@ -1,5 +1,5 @@
 //Hooks
-import { usePopularTvShows } from '../service/hooks';
+import { usePopularTvShows } from '../services/hooks/tv-shows';
 
 const TvShows = () => {
   const { data, error, isLoading } = usePopularTvShows();
