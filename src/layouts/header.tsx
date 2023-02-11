@@ -1,16 +1,21 @@
 import { NavLink } from 'react-router-dom';
+//Icons
+import logo from '../assets/images/mainlogo.png';
 
 const Header = () => {
   return (
-    <div className='border-2 border-black'>
-      <header className='cotainer mx-auto max-w-5xl flex justify-between'>
-        <NavLink to='/'>
-          <img src='' alt='' />
-          <p>Logo</p>
-        </NavLink>
-        <NavLink to='movies'>Movies</NavLink>
-      </header>
-    </div>
+    <header className='flex justify-between py-6'>
+      <NavLink to='/'>
+        <img src={logo} alt='' />
+      </NavLink>
+      <input
+        className=''
+        type='text'
+        name=''
+        id=''
+        placeholder='Search your favorite movie'
+      />
+    </header>
   );
 };
 

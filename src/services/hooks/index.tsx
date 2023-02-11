@@ -8,7 +8,7 @@ export const useTrending = () => {
     queryFn: async (): Promise<RequestType> =>
       await (
         await fetch(
-          'https://api.themoviedb.org/3/trending/all/week?api_key=b51f7c5d5e1fada4247e4856451be8f9'
+          'https://api.themoviedb.org/3/trending/movie/week?api_key=b51f7c5d5e1fada4247e4856451be8f9'
         )
       ).json(),
   });

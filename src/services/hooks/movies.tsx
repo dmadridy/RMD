@@ -4,7 +4,7 @@ import { RequestType } from '../utils/types';
 
 export const usePopularMovies = () => {
   return useQuery({
-    queryKey: ['Movies'],
+    queryKey: ['Popular'],
     queryFn: async (): Promise<RequestType> =>
       await (
         await fetch(

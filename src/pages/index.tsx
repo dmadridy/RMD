@@ -11,14 +11,14 @@ const Home: React.FC = () => {
   console.log(data);
 
   return (
-    <div>
+    <div className='flex justify-center flex-wrap gap-6'>
       {data?.results.map((item) => (
-        <div key={item.id}>
-          <h1>
-            {item.title} {item.name}
-          </h1>
-
-          <img src={item.poster_path} alt='' />
+        <div className='' key={item.id}>
+          <img
+            className='w-64 h-96'
+            src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+            alt='Image Poster'
+          />
         </div>
       ))}
     </div>

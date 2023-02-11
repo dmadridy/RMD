@@ -1,7 +1,7 @@
 //Hooks
 import { usePopularMovies } from '../services/hooks/movies';
 
-const Movies = () => {
+const PopularMovies = () => {
   const { data, error, isLoading } = usePopularMovies();
 
   if (isLoading) return <h1>Loading...</h1>;
@@ -19,4 +19,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default PopularMovies;
