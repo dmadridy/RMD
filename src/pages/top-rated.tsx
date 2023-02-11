@@ -1,8 +1,8 @@
 //Hooks
-import { useTrending } from '../services/hooks';
+import { useTopRatedMovies } from '../services/hooks';
 
-const Home = () => {
-  const { data, error, isLoading } = useTrending();
+const TopRatedMovies = () => {
+  const { data, error, isLoading } = useTopRatedMovies();
 
   if (isLoading) return <h1>Loading...</h1>;
 
@@ -25,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default TopRatedMovies;

@@ -1,8 +1,8 @@
 //Hooks
-import { useTrending } from '../services/hooks';
+import { useUpcomingMovies } from '../services/hooks';
 
-const Home = () => {
-  const { data, error, isLoading } = useTrending();
+const UpcomingMovies = () => {
+  const { data, error, isLoading } = useUpcomingMovies();
 
   if (isLoading) return <h1>Loading...</h1>;
 
@@ -25,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default UpcomingMovies;
