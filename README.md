@@ -1,2 +1,11 @@
 # RMD
-This is a project based on React and Typescript. We will implement libraries such as ReactQuery and ReactRouter.
+Technologies
+- React
+- Typescript
+
+Libraries
+- React QUery
+- React Router
+
+APIS
+- TMDB
