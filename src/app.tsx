@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 //Pages
 import Home from './pages';
-import TvShows from './pages/tv-shows';
 import Movies from './pages/movies';
 import Error404 from './errors/error-404';
 //Layout
@@ -18,7 +17,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Root />}>
       <Route index element={<Home />} />
-      <Route path='tv-shows' element={<TvShows />} />
       <Route path='movies' element={<Movies />} />
       <Route path='*' element={<Error404 />} />
     </Route>

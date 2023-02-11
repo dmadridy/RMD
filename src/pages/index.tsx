@@ -14,7 +14,11 @@ const Home: React.FC = () => {
     <div>
       {data?.results.map((item) => (
         <div key={item.id}>
-          {item.title} {item.name}
+          <h1>
+            {item.title} {item.name}
+          </h1>
+
+          <img src={item.poster_path} alt='' />
         </div>
       ))}
     </div>
