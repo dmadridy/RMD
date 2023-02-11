@@ -30,7 +30,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <p className='py-12 text-gray-400 text-'>
+      <p className='text-xs py-12 text-gray-400 text-'>
         © 2023 David Madrid. All rights reserved.
       </p>
     </footer>

@@ -4,7 +4,7 @@ import logo from '../assets/images/mainlogo.png';
 
 const Header = () => {
   return (
-    <header className='flex justify-between py-6'>
+    <header className='flex justify-between pt-12 pb-6'>
       <NavLink to='/'>
         <img src={logo} alt='' />
       </NavLink>

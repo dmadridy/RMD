@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import Menu from '../components/menu';
 //Layout
 import Footer from './footer';
 import Header from './header';
+import Menu from './menu';
 
 const Root = () => {
   return (

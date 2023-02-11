@@ -1,5 +1,5 @@
 //Hooks
-import { usePopularMovies } from '../services/hooks/movies';
+import { usePopularMovies } from '../services/hooks';
 
 const PopularMovies = () => {
   const { data, error, isLoading } = usePopularMovies();
@@ -11,9 +11,15 @@ const PopularMovies = () => {
   console.log(data);
 
   return (
-    <div>
-      {data?.results.map((movie) => (
-        <div key={movie.id}>{movie.title}</div>
+    <div className='flex justify-center flex-wrap gap-6'>
+      {data?.results.map((item) => (
+        <div className='' key={item.id}>
+          <img
+            className='w-64 h-96'
+            src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+            alt='Image Poster'
+          />
+        </div>
       ))}
     </div>
   );
