@@ -1,5 +1,7 @@
 //Hooks
 import { useTopRatedMovies } from '../services/hooks';
+//Components
+import Item from '../components/item';
 
 const TopRatedMovies = () => {
   const { data, error, isLoading } = useTopRatedMovies();
@@ -13,13 +15,7 @@ const TopRatedMovies = () => {
   return (
     <div className='flex justify-center flex-wrap gap-6'>
       {data?.results.map((item) => (
-        <div className='' key={item.id}>
-          <img
-            className='w-64 h-96'
-            src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-            alt='Image Poster'
-          />
-        </div>
+        <Item item={item} />
       ))}
     </div>
   );

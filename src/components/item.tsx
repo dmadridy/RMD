@@ -1,7 +1,11 @@
 //Types
 import { ObjectType } from '../services/utils/types';
 
-const Item = (item: ObjectType) => {
+type Props = {
+  item: ObjectType;
+};
+
+const Item: React.FC<Props> = ({ item }) => {
   return (
     <div>
       <img
