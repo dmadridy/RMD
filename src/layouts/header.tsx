@@ -2,17 +2,15 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header>
-      <div>
+    <div className='border-2 border-black'>
+      <header className='cotainer mx-auto max-w-5xl flex justify-between'>
         <NavLink to='/'>
           <img src='' alt='' />
           <p>Logo</p>
         </NavLink>
-      </div>
-      <div>
         <NavLink to='movies'>Movies</NavLink>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 };
 
