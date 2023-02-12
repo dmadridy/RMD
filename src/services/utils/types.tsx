@@ -1,5 +1,5 @@
 //Types
-export type ObjectType = {
+export type MovieType = {
   adult: boolean;
   backdrop_path: string;
   first_air_date: string;
@@ -20,7 +20,7 @@ export type ObjectType = {
 
 export type RequestType = {
   page: string;
-  results: ObjectType[];
+  results: MovieType[];
   total_pages: number;
   total_results: number;
 };

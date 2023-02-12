@@ -1,7 +1,7 @@
 //Hooks
 import { useTrending } from '../services/hooks';
 //Componenets
-import Item from '../components/item';
+import Page from '../components/page';
 
 const Home = () => {
   const { data, error, isLoading } = useTrending();
@@ -10,15 +10,7 @@ const Home = () => {
 
   if (error) return <h1>Ups, something went wrong!...</h1>;
 
-  console.log(data);
-
-  return (
-    <div className='flex justify-center flex-wrap gap-6'>
-      {data?.results.map((item) => (
-        <Item item={item} />
-      ))}
-    </div>
-  );
+  return <Page data={data} />;
 };
 
 export default Home;

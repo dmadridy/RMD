@@ -1,19 +1,20 @@
 //Types
-import { ObjectType } from '../services/utils/types';
+import { Link } from 'react-router-dom';
+import { MovieType } from '../services/utils/types';
 
 type Props = {
-  item: ObjectType;
+  item: MovieType;
 };
 
 const Item: React.FC<Props> = ({ item }) => {
   return (
-    <div>
+    <Link to={item.name}>
       <img
-        className='w-64 h-96'
+        className=''
         src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
         alt='Image Poster'
       />
-    </div>
+    </Link>
   );
 };
 

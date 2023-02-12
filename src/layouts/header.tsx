@@ -4,17 +4,19 @@ import logo from '../assets/images/mainlogo.png';
 
 const Header = () => {
   return (
-    <header className='flex justify-between pt-12 pb-6'>
-      <NavLink to='/'>
-        <img src={logo} alt='' />
-      </NavLink>
-      <input
-        className=''
-        type='text'
-        name=''
-        id=''
-        placeholder='Search your favorite movie'
-      />
+    <header className='border-b-2 border-neutral-800'>
+      <nav className='container mx-auto max-w-7xl flex justify-between'>
+        <NavLink to='/'>
+          <img src={logo} alt='' />
+        </NavLink>
+        <input
+          className=''
+          type='text'
+          name=''
+          id=''
+          placeholder='Search your favorite movie'
+        />
+      </nav>
     </header>
   );
 };

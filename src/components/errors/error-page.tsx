@@ -1,4 +1,4 @@
-const ErrorPage = () => {
+const UnexpectdRouteError = () => {
   return (
     <>
       <p>Ups... Something happened</p>
@@ -6,4 +6,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default UnexpectdRouteError;

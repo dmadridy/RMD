@@ -6,7 +6,7 @@ import Menu from './menu';
 
 const Root = () => {
   return (
-    <div className='container mx-auto max-w-7xl'>
+    <div>
       <Header />
       <Menu />
       <Outlet />

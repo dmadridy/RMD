@@ -14,12 +14,13 @@ import TopRatedMovies from './pages/top-rated';
 import Reference from './pages/reference';
 //Components
 import Error404 from './components/errors/error-404';
+import UnexpectdRouteError from './components/errors/error-page';
 //Layout
 import Root from './layouts/root';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Root />}>
+    <Route path='/' errorElement={<UnexpectdRouteError />} element={<Root />}>
       <Route index element={<Home />} />
       <Route path='popular' element={<PopularMovies />} />
       <Route path='upcoming' element={<UpcomingMovies />} />

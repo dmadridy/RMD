@@ -6,8 +6,8 @@ import linkedin from '../assets/icons/linkedin.png';
 
 const Footer = () => {
   return (
-    <footer className='pt-20 pb-10'>
-      <div className='flex justify-around'>
+    <footer className='border-t-2 border-neutral-800 p-12'>
+      <div className='flex justify-around container mx-auto max-w-7xl'>
         <div className='space-x-5'>
           <a href='https://porfolio-v1-pearl.vercel.app/about' target='_blank'>
             About
@@ -30,9 +30,6 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <p className='text-xs py-12 text-gray-400 text-'>
-        © 2023 David Madrid. All rights reserved.
-      </p>
     </footer>
   );
 };
