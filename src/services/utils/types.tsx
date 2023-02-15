@@ -1,4 +1,11 @@
 //Types
+export type RequestType = {
+  page: string;
+  results: MovieType[];
+  total_pages: number;
+  total_results: number;
+};
+
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;
@@ -18,9 +25,27 @@ export type MovieType = {
   vote_count: number;
 };
 
-export type RequestType = {
-  page: string;
-  results: MovieType[];
-  total_pages: number;
-  total_results: number;
+export type MovieDetails = {
+  adult: boolean;
+  backdrop_path: string | null;
+  budget: string;
+  genres: string[];
+  homepage: string | null;
+  id: number;
+  original_lenguage: string;
+  original_title: string;
+  overview: string | null;
+  popularity: number;
+  poster_path: string | null;
+  production_companies: (string | number)[];
+  prudction_companies: string[];
+  release_date: string;
+  revenue: number;
+  runtime: number | null;
+  status: string;
+  vote_average: number;
+  vote_count: number;
+  title: string;
+  video: boolean;
+  tagline: string | null;
 };
