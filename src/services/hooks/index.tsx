@@ -50,9 +50,9 @@ export const useUpcomingMovies = () => {
   });
 };
 
-export const useMovieDetails = (movieId: number | undefined) => {
+export const useMovieDetails = (movieId: number) => {
   return useQuery({
-    queryKey: [`${movieId}`],
+    queryKey: [String(movieId)],
     queryFn: async (): Promise<MovieDetails> =>
       await (
         await fetch(

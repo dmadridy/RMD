@@ -6,17 +6,14 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-//Pages
 import Home from './pages';
 import PopularMovies from './pages/popular';
 import UpcomingMovies from './pages/upcoming';
 import TopRatedMovies from './pages/top-rated';
 import Reference from './pages/reference';
 import MovieDetails from './pages/movie-details';
-//Components
 import Error404 from './components/errors/error-404';
 import UnexpectdRouteError from './components/errors/error-page';
-//Layout
 import Root from './layouts/root';
 
 const router = createBrowserRouter(
