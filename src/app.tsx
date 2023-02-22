@@ -27,7 +27,7 @@ const router = createBrowserRouter(
       <Route path='upcoming' element={<UpcomingMovies />} />
       <Route path='top-rated' element={<TopRatedMovies />} />
       <Route path='reference' element={<Reference />} />
-      <Route path=':moviedetails' element={<MovieDetails />} />
+      <Route path='movies/:movieId' element={<MovieDetails />} />
       <Route path='*' element={<Error404 />} />
     </Route>
   )

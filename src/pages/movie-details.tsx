@@ -1,16 +1,16 @@
-///Hooks
+import { useParams } from 'react-router-dom';
 import { useMovieDetails } from '../services/hooks';
-//Types
-import { MovieType } from '../services/utils/types';
 
-type Props = {
-  item: MovieType;
-};
+const MovieDetails = () => {
+  let { movieId } = useParams();
 
-const MovieDetails: React.FC<Props> = ({ item }) => {
-  const { data, error, isLoading } = useMovieDetails(item);
+  const { data, error, isLoading } = useMovieDetails(Number(movieId));
 
-  return <div>Something needs to render here</div>;
+  if (isLoading) return <h1>Loading...</h1>;
+
+  if (error) return <h1>Ups, something went wrong!...</h1>;
+
+  return <div>{data?.id}</div>;
 };
 
 export default MovieDetails;

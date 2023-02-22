@@ -1,6 +1,4 @@
-//Hooks
 import { usePopularMovies } from '../services/hooks';
-//Components
 import Page from '../components/page';
 
 const PopularMovies = () => {

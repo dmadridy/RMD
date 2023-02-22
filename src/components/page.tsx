@@ -1,7 +1,5 @@
-//Types
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RequestType } from '../services/utils/types';
-//Components
 import Item from './item';
 
 type Props = {
@@ -9,12 +7,10 @@ type Props = {
 };
 
 const Page: React.FC<Props> = ({ data }) => {
-  let { moviedetails } = useParams();
-
   return (
     <div className='flex justify-center flex-wrap gap-6 p-12 container mx-auto max-w-7xl'>
       {data?.results.map((item) => (
-        <Link key={item.id} to={`/${item.name}`}>
+        <Link key={item.id} to={`/movies/${item.id}`}>
           <Item item={item} />
         </Link>
       ))}

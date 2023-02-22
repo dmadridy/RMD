@@ -1,6 +1,4 @@
-//Hooks
 import { useTopRatedMovies } from '../services/hooks';
-//Components
 import Page from '../components/page';
 
 const TopRatedMovies = () => {

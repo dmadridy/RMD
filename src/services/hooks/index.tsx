@@ -1,8 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-//API KEY
 import { API_KEY } from '../constants/API_KEY';
-//Types
-import { MovieDetails, MovieType, RequestType } from '../utils/types';
+import { MovieDetails, RequestType } from '../utils/types';
 
 export const useTrending = () => {
   return useQuery({
@@ -52,13 +50,13 @@ export const useUpcomingMovies = () => {
   });
 };
 
-export const useMovieDetails = (item: MovieType) => {
+export const useMovieDetails = (movieId: number | undefined) => {
   return useQuery({
-    queryKey: [item.name],
+    queryKey: [`${movieId}`],
     queryFn: async (): Promise<MovieDetails> =>
       await (
         await fetch(
-          `https://api.themoviedb.org/3/movie/${item.id}api_key=${API_KEY}`
+          `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`
         )
       ).json(),
   });

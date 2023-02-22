@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-//Icons
-import github from '../assets/Icons/github.png';
+import github from '../assets/icons/github.png';
 import instagram from '../assets/icons/instagram.png';
 import linkedin from '../assets/icons/linkedin.png';
 
@@ -15,7 +14,14 @@ const Footer = () => {
           <a href='mailto:davidmadridpathway.com'>Contact</a>
           <Link to='/reference'>Reference</Link>
         </div>
-        <div className='flex space-x-5'>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+/*<div className='flex space-x-5'>
           <a href='https://github.com/DavidMadridYepez' target='_blank'>
             <img className='w-6' src={github} alt='Github Profile' />
           </a>
@@ -28,10 +34,4 @@ const Footer = () => {
           >
             <img className='w-6' src={linkedin} alt='Linkedin Profile' />
           </a>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+        </div>;*/

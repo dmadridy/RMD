@@ -1,4 +1,3 @@
-//Types
 import { MovieType } from '../services/utils/types';
 
 type Props = {

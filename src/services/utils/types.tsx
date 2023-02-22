@@ -1,4 +1,3 @@
-//Types
 export type RequestType = {
   page: string;
   results: MovieType[];
