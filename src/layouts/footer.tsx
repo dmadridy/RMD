@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
-//Icons
-import github from '../assets/Icons/github.png';
+import github from '../assets/icons/github.png';
 import instagram from '../assets/icons/instagram.png';
 import linkedin from '../assets/icons/linkedin.png';
 
 const Footer = () => {
   return (
-    <footer className='pt-20 pb-10'>
-      <div className='flex justify-around'>
+    <footer className='border-t-2 border-neutral-800'>
+      <div className='flex justify-between'>
         <div className='space-x-5'>
           <a href='https://porfolio-v1-pearl.vercel.app/about' target='_blank'>
             About
@@ -15,7 +14,14 @@ const Footer = () => {
           <a href='mailto:davidmadridpathway.com'>Contact</a>
           <Link to='/reference'>Reference</Link>
         </div>
-        <div className='flex space-x-5'>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+/*<div className='flex space-x-5'>
           <a href='https://github.com/DavidMadridYepez' target='_blank'>
             <img className='w-6' src={github} alt='Github Profile' />
           </a>
@@ -28,13 +34,4 @@ const Footer = () => {
           >
             <img className='w-6' src={linkedin} alt='Linkedin Profile' />
           </a>
-        </div>
-      </div>
-      <p className='text-xs py-12 text-gray-400 text-'>
-        © 2023 David Madrid. All rights reserved.
-      </p>
-    </footer>
-  );
-};
-
-export default Footer;
+        </div>;*/

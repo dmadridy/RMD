@@ -1,15 +1,36 @@
-//Types
-import { ObjectType } from '../services/utils/types';
+import { Link } from 'react-router-dom';
+import { MovieType } from '../services/utils/types';
+import star from '../assets/icons/estrella.png';
+import { reduceTitle, roundVoteAverage } from '../services/functions';
 
-const Item = (item: ObjectType) => {
+type Props = {
+  item: MovieType;
+};
+
+const Item: React.FC<Props> = ({ item }) => {
   return (
-    <div>
-      <img
-        className='w-64 h-96'
-        src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-        alt='Image Poster'
-      />
-    </div>
+    <Link
+      className='rounded-lg font-medium space-y-2 p-1.5 hover:bg-neutral-800'
+      to={`/movies/${item.id}`}
+    >
+      <div>
+        <img
+          className='rounded-lg'
+          src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+          alt='Image Poster'
+        />
+      </div>
+      <div className='flex justify-between'>
+        <div>
+          <p>{reduceTitle(item.title)}</p>
+        </div>
+        <div className='flex items-center space-x-2'>
+          <img className='w-4 h-4' src={star} alt='' />
+          <p>{roundVoteAverage(item.vote_average)}</p>
+        </div>
+      </div>
+      <p className='text-sm text-neutral-400'>{item.release_date}</p>
+    </Link>
   );
 };
 
