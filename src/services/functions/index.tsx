@@ -4,3 +4,7 @@ export const reduceTitle = (title: string) => {
     return title;
   }
 };
+
+export const roundVoteAverage = (vote: number) => {
+  return vote.toFixed(1);
+};
