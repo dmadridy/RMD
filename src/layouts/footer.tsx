@@ -5,33 +5,29 @@ import linkedin from '../assets/icons/linkedin.png';
 
 const Footer = () => {
   return (
-    <footer className='border-t-2 border-neutral-800'>
-      <div className='flex justify-between'>
-        <div className='space-x-5'>
-          <a href='https://porfolio-v1-pearl.vercel.app/about' target='_blank'>
-            About
-          </a>
-          <a href='mailto:davidmadridpathway.com'>Contact</a>
-          <Link to='/reference'>Reference</Link>
-        </div>
+    <footer className='py-12 flex border-t-2 border-neutral-800 justify-between'>
+      <div className='flex text-neutral-400 text-sm'>
+        <p>© 2023 David Madrid.</p>
+        <a target='_blank' href=''>
+          Powered by <img src='' alt='' />
+        </a>
+      </div>
+      <div className='space-x-4'>
+        <a href='https://github.com/DavidMadridYepez' target='_blank'>
+          <i>git</i>
+        </a>
+        <a href='https://www.instagram.com/dmadridy/' target='_blank'>
+          <i>ins</i>
+        </a>
+        <a
+          href='https://www.linkedin.com/in/david-madrid-0809211a1/'
+          target='_blank'
+        >
+          <i>lin</i>
+        </a>
       </div>
     </footer>
   );
 };
 
 export default Footer;
-
-/*<div className='flex space-x-5'>
-          <a href='https://github.com/DavidMadridYepez' target='_blank'>
-            <img className='w-6' src={github} alt='Github Profile' />
-          </a>
-          <a href='https://www.instagram.com/dmadridy/' target='_blank'>
-            <img className='w-6' src={instagram} alt='Instagram Profile' />
-          </a>
-          <a
-            href='https://www.linkedin.com/in/david-madrid-0809211a1/'
-            target='_blank'
-          >
-            <img className='w-6' src={linkedin} alt='Linkedin Profile' />
-          </a>
-        </div>;*/
