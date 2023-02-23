@@ -1,4 +1,4 @@
-import { useTrending } from '../services/hooks';
+import { useTrending } from '../hooks';
 import Page from '../components/page';
 
 const Home = () => {

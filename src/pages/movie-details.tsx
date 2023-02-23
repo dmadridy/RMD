@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useMovieDetails } from '../services/hooks';
+import { useMovieDetails } from '../hooks';
 
 const MovieDetails = () => {
   let { movieId } = useParams();

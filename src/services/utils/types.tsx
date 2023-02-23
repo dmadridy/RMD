@@ -8,7 +8,7 @@ export type RequestType = {
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;
-  first_air_date: string;
+  release_date: string;
   genre_ids: number[];
   id: number;
   media_type: string;

@@ -1,4 +1,4 @@
-import { useUpcomingMovies } from '../services/hooks';
+import { useUpcomingMovies } from '../hooks';
 import Page from '../components/page';
 
 const UpcomingMovies = () => {

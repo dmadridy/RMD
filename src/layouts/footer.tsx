@@ -5,8 +5,8 @@ import linkedin from '../assets/icons/linkedin.png';
 
 const Footer = () => {
   return (
-    <footer className='border-t-2 border-neutral-800 p-12'>
-      <div className='flex justify-around container mx-auto max-w-7xl'>
+    <footer className='border-t-2 border-neutral-800'>
+      <div className='flex justify-between'>
         <div className='space-x-5'>
           <a href='https://porfolio-v1-pearl.vercel.app/about' target='_blank'>
             About

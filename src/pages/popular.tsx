@@ -1,4 +1,4 @@
-import { usePopularMovies } from '../services/hooks';
+import { usePopularMovies } from '../hooks';
 import Page from '../components/page';
 
 const PopularMovies = () => {

@@ -4,7 +4,7 @@ import logo from '../assets/images/mainlogo.png';
 const Header = () => {
   return (
     <header className='border-b-2 border-neutral-800'>
-      <nav className='container mx-auto max-w-7xl flex justify-between'>
+      <nav className='flex justify-between'>
         <NavLink to='/'>
           <img src={logo} alt='' />
         </NavLink>

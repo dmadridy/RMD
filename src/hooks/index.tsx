@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { API_KEY } from '../constants/API_KEY';
-import { MovieDetails, RequestType } from '../utils/types';
+import { API_KEY } from '../services/constants/API_KEY';
+import { MovieDetails, RequestType } from '../services/utils/types';
 
 export const useTrending = () => {
   return useQuery({
