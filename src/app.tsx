@@ -10,7 +10,6 @@ import Home from './pages';
 import PopularMovies from './pages/popular';
 import UpcomingMovies from './pages/upcoming';
 import TopRatedMovies from './pages/top-rated';
-import Reference from './pages/reference';
 import MovieDetails from './pages/movie-details';
 import Error404 from './components/errors/error-404';
 import UnexpectdRouteError from './components/errors/error-page';
@@ -23,7 +22,6 @@ const router = createBrowserRouter(
       <Route path='popular' element={<PopularMovies />} />
       <Route path='upcoming' element={<UpcomingMovies />} />
       <Route path='top-rated' element={<TopRatedMovies />} />
-      <Route path='reference' element={<Reference />} />
       <Route path='movies/:movieId' element={<MovieDetails />} />
       <Route path='*' element={<Error404 />} />
     </Route>

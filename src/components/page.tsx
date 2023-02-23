@@ -1,4 +1,6 @@
 import { RequestType } from '../services/utils/types';
+import leftAarrow from '../assets/icons/left-arrow.png';
+import rightArrow from '../assets/icons/right-arrow.png';
 import Item from './item';
 
 type Props = {
@@ -14,13 +16,13 @@ const Page: React.FC<Props> = ({ data }) => {
         ))}
       </div>
       <div className='font-semibold text-neutral-400 py-16 flex space-x-12 justify-center'>
-        <button>
-          <img src='' alt='' />
+        <button className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'>
+          <img className='w-3' src={leftAarrow} alt='' />
           Previous
         </button>
-        <button>
-          <img src='' alt='' />
+        <button className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'>
           Next
+          <img className='w-3' src={rightArrow} alt='' />
         </button>
       </div>
     </div>
