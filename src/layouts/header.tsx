@@ -5,8 +5,8 @@ import { activeStyle, unactiveStyle } from '../assets/styles';
 
 const Header = () => {
   return (
-    <header className=''>
-      <nav className='py-8 flex justify-between border-b-2 border-neutral-800'>
+    <header>
+      <nav className='py-8 flex items-center justify-between border-b-2 border-neutral-800'>
         <NavLink to='/'>
           <img src={logo} alt='' />
         </NavLink>
