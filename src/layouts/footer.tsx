@@ -5,7 +5,7 @@ import tmdblogo from '../assets/images/TMDBicon.svg';
 
 const Footer = () => {
   return (
-    <footer className='py-12 flex border-t-2 border-neutral-800 justify-between'>
+    <footer className='py-12 gap-8 flex items-center border-t-2 border-neutral-800 justify-between'>
       <div className='flex text-neutral-400 text-sm'>
         <p>© 2023 David Madrid.&nbsp;</p>
         <a

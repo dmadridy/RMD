@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import Loading from '../components/loading';
 import { useMovieDetails } from '../hooks';
 
 const MovieDetails = () => {
@@ -6,7 +7,7 @@ const MovieDetails = () => {
 
   const { data, error, isLoading } = useMovieDetails(Number(movieId));
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Loading />;
 
   if (error) return <h1>Ups, something went wrong!...</h1>;
 
