@@ -11,7 +11,7 @@ const Footer = () => {
         <a
           className='flex items-center hover:text-white transition duration-100'
           target='_blank'
-          href=''
+          href='https://www.themoviedb.org/'
         >
           <p>Powered By&nbsp;&nbsp; </p>
           <img className='h-3' src={tmdblogo} alt='' />
