@@ -1,6 +1,6 @@
-import { useTrending } from '../hooks/movie-general';
-import Page from '../components/movie-general/page';
-import Loading from '../components/movie-general/loading';
+import { useTrending } from '../hooks/general';
+import Page from '../components/general/page';
+import Loading from '../components/general/loading';
 
 const Home = () => {
   const { data, error, isLoading } = useTrending();

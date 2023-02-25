@@ -1,4 +1,4 @@
-import { useCredits } from '../../hooks/movie-details';
+import { useCredits } from '../../hooks/details';
 
 type Props = {
   movieId: number;
@@ -6,6 +6,7 @@ type Props = {
 
 const Credits: React.FC<Props> = ({ movieId }) => {
   const { data, isLoading, error } = useCredits(movieId);
+  console.log(data);
 
   return <div>Credits</div>;
 };

@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/icons/mainlogo.png';
 import search from '../assets/icons/search.png';
-import { activeStyle, unactiveStyle } from '../assets/styles';
 
 const Header = () => {
   return (
@@ -24,32 +23,6 @@ const Header = () => {
           />
         </form>
       </nav>
-      <div className='space-x-2 pt-8 py-12 text-neutral-400 font-medium'>
-        <NavLink
-          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-          to='/'
-        >
-          Trending
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-          to='popular'
-        >
-          Popular
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-          to='top-rated'
-        >
-          Top Rated
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-          to='upcoming'
-        >
-          Upcoming
-        </NavLink>
-      </div>
     </header>
   );
 };

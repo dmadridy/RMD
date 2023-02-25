@@ -37,7 +37,7 @@ export type MovieDetails = {
   popularity: number;
   poster_path: string | null;
   production_companies: (string | number)[];
-  prudction_companies: string[];
+  prudction_countries: string[];
   release_date: string;
   revenue: number;
   runtime: number | null;
@@ -51,13 +51,21 @@ export type MovieDetails = {
 
 export type MovieCredits = {
   id: string;
-  cast: Object[];
-  crew: Object[];
+  cast: object[];
+  crew: object[];
 };
 
 export type MovieRecommendations = {
   page: number;
-  results: Object[];
+  results: object[];
+  total_pages: number;
+  total_results: number;
+};
+
+export type MovieReviews = {
+  id: number;
+  page: number;
+  results: object[];
   total_pages: number;
   total_results: number;
 };

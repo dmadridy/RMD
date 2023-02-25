@@ -4,6 +4,7 @@ import {
   MovieCredits,
   MovieDetails,
   MovieRecommendations,
+  MovieReviews,
 } from '../../services/utils/types';
 
 export const useMovieDetails = (movieId: number) => {
@@ -37,6 +38,18 @@ export const useRecommendations = (movieId: number) => {
       await (
         await fetch(
           `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${API_KEY}`
+        )
+      ).json(),
+  });
+};
+
+export const useReviews = (movieId: number) => {
+  return useQuery({
+    queryKey: [String(movieId) + '_reviews'],
+    queryFn: async (): Promise<MovieReviews> =>
+      await (
+        await fetch(
+          `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
         )
       ).json(),
   });

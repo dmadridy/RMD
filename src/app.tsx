@@ -11,13 +11,13 @@ import PopularMovies from './pages/popular';
 import UpcomingMovies from './pages/upcoming';
 import TopRatedMovies from './pages/top-rated';
 import MovieDetails from './pages/movie-details';
-import Error404 from './components/errors/error-404';
-import UnexpectdRouteError from './components/errors/error-page';
+import Error404 from './components/errors/404';
+import ErrorElement from './components/errors/exceptions';
 import Root from './layouts/root';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' errorElement={<UnexpectdRouteError />} element={<Root />}>
+    <Route path='/' errorElement={<ErrorElement />} element={<Root />}>
       <Route index element={<Home />} />
       <Route path='popular' element={<PopularMovies />} />
       <Route path='upcoming' element={<UpcomingMovies />} />

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MovieType } from '../../services/utils/types';
-import star from '../assets/icons/estrella.png';
+import star from '../../assets/icons/estrella.png';
 import { reduceTitle, roundVoteAverage } from '../../services/functions';
 
 type Props = {

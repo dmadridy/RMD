@@ -2,6 +2,7 @@ import { RequestType } from '../../services/utils/types';
 import leftAarrow from '../../assets/icons/left-arrow.png';
 import rightArrow from '../../assets/icons/right-arrow.png';
 import Item from './item';
+import Menu from '../../layouts/menu';
 
 type Props = {
   data: RequestType | undefined;
@@ -10,6 +11,7 @@ type Props = {
 const Page: React.FC<Props> = ({ data }) => {
   return (
     <div>
+      <Menu />
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8'>
         {data?.results.map((item) => (
           <Item key={item.id} item={item} />

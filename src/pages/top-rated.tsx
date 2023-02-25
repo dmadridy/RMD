@@ -1,6 +1,6 @@
-import { useTopRatedMovies } from '../hooks/movie-general';
-import Page from '../components/movie-general/page';
-import Loading from '../components/movie-general/loading';
+import { useTopRatedMovies } from '../hooks/general';
+import Page from '../components/general/page';
+import Loading from '../components/general/loading';
 
 const TopRatedMovies = () => {
   const { data, error, isLoading } = useTopRatedMovies();

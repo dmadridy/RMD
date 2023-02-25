@@ -1,4 +1,4 @@
-import { useRecommendations } from '../../hooks/movie-details';
+import { useRecommendations } from '../../hooks/details';
 
 type Props = {
   movieId: number;
@@ -6,6 +6,7 @@ type Props = {
 
 const Recommendations: React.FC<Props> = ({ movieId }) => {
   const { data, isLoading, error } = useRecommendations(movieId);
+  console.log(data);
 
   return <div>Recommendations</div>;
 };
