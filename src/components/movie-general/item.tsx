@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { MovieType } from '../services/utils/types';
+import { MovieType } from '../../services/utils/types';
 import star from '../assets/icons/estrella.png';
-import { reduceTitle, roundVoteAverage } from '../services/functions';
+import { reduceTitle, roundVoteAverage } from '../../services/functions';
 
 type Props = {
   item: MovieType;
@@ -16,7 +16,7 @@ const Item: React.FC<Props> = ({ item }) => {
       <div>
         <img
           className='rounded-lg'
-          src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w400${item.poster_path}`}
           alt='Image Poster'
         />
       </div>

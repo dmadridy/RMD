@@ -1,6 +1,6 @@
-import { usePopularMovies } from '../hooks';
-import Page from '../components/page';
-import Loading from '../components/loading';
+import { usePopularMovies } from '../hooks/movie-general';
+import Page from '../components/movie-general/page';
+import Loading from '../components/movie-general/loading';
 
 const PopularMovies = () => {
   const { data, error, isLoading } = usePopularMovies();

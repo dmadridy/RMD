@@ -1,6 +1,6 @@
-import { RequestType } from '../services/utils/types';
-import leftAarrow from '../assets/icons/left-arrow.png';
-import rightArrow from '../assets/icons/right-arrow.png';
+import { RequestType } from '../../services/utils/types';
+import leftAarrow from '../../assets/icons/left-arrow.png';
+import rightArrow from '../../assets/icons/right-arrow.png';
 import Item from './item';
 
 type Props = {

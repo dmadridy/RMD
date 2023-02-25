@@ -48,3 +48,16 @@ export type MovieDetails = {
   video: boolean;
   tagline: string | null;
 };
+
+export type MovieCredits = {
+  id: string;
+  cast: Object[];
+  crew: Object[];
+};
+
+export type MovieRecommendations = {
+  page: number;
+  results: Object[];
+  total_pages: number;
+  total_results: number;
+};

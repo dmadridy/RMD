@@ -1,6 +1,6 @@
-import { useUpcomingMovies } from '../hooks';
-import Page from '../components/page';
-import Loading from '../components/loading';
+import { useUpcomingMovies } from '../hooks/movie-general';
+import Page from '../components/movie-general/page';
+import Loading from '../components/movie-general/loading';
 
 const UpcomingMovies = () => {
   const { data, error, isLoading } = useUpcomingMovies();
