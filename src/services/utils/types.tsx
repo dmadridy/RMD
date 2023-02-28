@@ -24,19 +24,28 @@ export type MovieType = {
   vote_count: number;
 };
 
+type Genres = { id: number; name: string };
+
+type Companies = {
+  id: number;
+  name: string;
+  logo_path: string;
+  origin_country: string;
+};
+
 export type MovieDetails = {
   adult: boolean;
   backdrop_path: string | null;
   budget: string;
-  genres: string[];
-  homepage: string | null;
+  genres: Genres[];
+  homepage: string | undefined;
   id: number;
   original_lenguage: string;
   original_title: string;
   overview: string | null;
   popularity: number;
   poster_path: string | null;
-  production_companies: (string | number)[];
+  production_companies: Companies[];
   prudction_countries: string[];
   release_date: string;
   revenue: number;

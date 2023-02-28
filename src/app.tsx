@@ -10,7 +10,7 @@ import Home from './pages';
 import PopularMovies from './pages/popular';
 import UpcomingMovies from './pages/upcoming';
 import TopRatedMovies from './pages/top-rated';
-import MovieDetails from './pages/movie-details';
+import MovieDetails from './components/details';
 import Error404 from './components/errors/404';
 import ErrorElement from './components/errors/exceptions';
 import Root from './layouts/root';

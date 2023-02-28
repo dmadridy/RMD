@@ -1,5 +1,5 @@
 const DataError = () => {
-  return <div>DataError</div>;
+  return <div>Houston, we have a problem...</div>;
 };
 
 export default DataError;
