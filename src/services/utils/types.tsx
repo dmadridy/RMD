@@ -35,27 +35,27 @@ type Companies = {
 
 export type MovieDetails = {
   adult: boolean;
-  backdrop_path: string | null;
-  budget: string;
+  backdrop_path: string;
+  budget: number;
   genres: Genres[];
-  homepage: string | undefined;
+  homepage: string;
   id: number;
-  original_lenguage: string;
+  original_language: string;
   original_title: string;
-  overview: string | null;
+  overview: string;
   popularity: number;
-  poster_path: string | null;
+  poster_path: string;
   production_companies: Companies[];
   prudction_countries: string[];
   release_date: string;
   revenue: number;
-  runtime: number | null;
+  runtime: number;
   status: string;
   vote_average: number;
   vote_count: number;
   title: string;
   video: boolean;
-  tagline: string | null;
+  tagline: string;
 };
 
 export type MovieCredits = {
