@@ -1,6 +1,4 @@
 import { useParams } from 'react-router-dom';
-import Credits from './credits';
-import Recommendations from './recomendations';
 import star from '../../assets/icons/estrella.png';
 import link from '../../assets/icons/link.png';
 import DataError from '../errors/fetch';
@@ -11,10 +9,10 @@ import {
   roundVoteAverage,
   timeConvert,
 } from '../../services/functions';
+import Options from './options';
 
 const MovieDetails = () => {
   let { movieId } = useParams();
-
   const { data, error, isLoading } = useMovieDetails(Number(movieId));
 
   if (isLoading) return <Loading />;

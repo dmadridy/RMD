@@ -1,10 +1,10 @@
 import { useCredits } from '../../hooks/details';
 
 type Props = {
-  movieId: number;
+  movieId: string | undefined;
 };
 
-const Credits = () => {
+const Credits: React.FC<Props> = ({ movieId }) => {
   return <div>Credits</div>;
 };
 
