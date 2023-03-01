@@ -1,6 +1,12 @@
-import React from 'react';
+import { useCredits } from '../../../hooks/details';
 
-const ReducedCredits = () => {
+type Props = {
+  movieId: number;
+};
+
+const ReducedCredits: React.FC<Props> = ({ movieId }) => {
+  const { data, isLoading, error } = useCredits(movieId);
+
   return <div>ReducedCredits</div>;
 };
 
