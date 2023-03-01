@@ -4,8 +4,8 @@ import search from '../assets/icons/search.png';
 
 const Header = () => {
   return (
-    <header>
-      <nav className='py-8 flex items-center justify-between border-b border-neutral-800'>
+    <header className='border-b border-neutral-800 py-8 '>
+      <nav className='flex items-center justify-between container mx-auto max-w-7xl'>
         <NavLink to='/'>
           <img src={logo} alt='' />
         </NavLink>

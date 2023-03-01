@@ -4,10 +4,7 @@ type Props = {
   movieId: number;
 };
 
-const Credits: React.FC<Props> = ({ movieId }) => {
-  const { data, isLoading, error } = useCredits(movieId);
-  console.log(data);
-
+const Credits = () => {
   return <div>Credits</div>;
 };
 
