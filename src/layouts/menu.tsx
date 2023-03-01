@@ -3,7 +3,7 @@ import { activeStyle, unactiveStyle } from '../assets/styles';
 
 const Menu = () => {
   return (
-    <div className='space-x-2 pt-8 py-12 text-neutral-400 font-medium'>
+    <div className='space-x-2 pt-8 pb-12 text-neutral-400 font-medium'>
       <NavLink
         className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
         to='/'

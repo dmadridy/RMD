@@ -1,15 +1,14 @@
 import { useParams } from 'react-router-dom';
-import star from '../../assets/icons/estrella.png';
-import link from '../../assets/icons/link.png';
-import DataError from '../errors/fetch';
-import Loading from '../general/loading';
-import { useMovieDetails } from '../../hooks/details';
+import star from '../../../assets/icons/estrella.png';
+import link from '../../../assets/icons/link.png';
+import DataError from '../../errors/fetch';
+import Loading from '../../general/loading';
+import { useMovieDetails } from '../../../hooks/details';
 import {
   makeDollar,
   roundVoteAverage,
   timeConvert,
-} from '../../services/functions';
-import Options from './options';
+} from '../../../services/functions';
 
 const MovieDetails = () => {
   let { movieId } = useParams();
