@@ -4,8 +4,9 @@ Technologies
 - Typescript
 
 Libraries
-- React QUery
+- React Query
 - React Router
+- Tailwind CSS
 
 APIS
 - TMDB

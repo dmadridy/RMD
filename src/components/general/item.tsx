@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { MovieType } from '../services/utils/types';
-import star from '../assets/icons/estrella.png';
-import { reduceTitle, roundVoteAverage } from '../services/functions';
+import { MovieType } from '../../services/utils/types';
+import star from '../../assets/icons/estrella.png';
+import { reduceTitle, roundVoteAverage } from '../../services/functions';
 
 type Props = {
   item: MovieType;
@@ -10,13 +10,13 @@ type Props = {
 const Item: React.FC<Props> = ({ item }) => {
   return (
     <Link
-      className='rounded-lg font-medium space-y-2 p-1.5 hover:bg-neutral-800'
+      className='transition duration-300 rounded-lg font-medium space-y-2 p-1.5 hover:bg-neutral-800'
       to={`/movies/${item.id}`}
     >
       <div>
         <img
           className='rounded-lg'
-          src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w400${item.poster_path}`}
           alt='Image Poster'
         />
       </div>

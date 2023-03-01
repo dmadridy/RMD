@@ -1,12 +1,14 @@
-import { useTopRatedMovies } from '../hooks';
-import Page from '../components/page';
+import { useTopRatedMovies } from '../hooks/general';
+import Page from '../components/general/page';
+import Loading from '../components/general/loading';
+import DataError from '../components/errors/fetch';
 
 const TopRatedMovies = () => {
   const { data, error, isLoading } = useTopRatedMovies();
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Loading />;
 
-  if (error) return <h1>Ups, something went wrong!...</h1>;
+  if (error) return <DataError />;
 
   return <Page data={data} />;
 };

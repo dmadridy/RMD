@@ -1,12 +1,14 @@
-import { useUpcomingMovies } from '../hooks';
-import Page from '../components/page';
+import { useUpcomingMovies } from '../hooks/general';
+import Page from '../components/general/page';
+import Loading from '../components/general/loading';
+import DataError from '../components/errors/fetch';
 
 const UpcomingMovies = () => {
   const { data, error, isLoading } = useUpcomingMovies();
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Loading />;
 
-  if (error) return <h1>Ups, something went wrong!...</h1>;
+  if (error) return <DataError />;
 
   return <Page data={data} />;
 };
