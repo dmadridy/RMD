@@ -11,7 +11,7 @@ const Reviews = () => {
 
   if (error) return <DataError />;
 
-  return <div className='container mx-auto max-w-7xl'>The Reviews</div>;
+  return <div className='container mx-auto max-w-7xl'>The 1 Reviews</div>;
 };
 
 export default Reviews;
