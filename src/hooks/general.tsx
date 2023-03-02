@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { API_KEY } from '../../services/constants/API_KEY';
-import { RequestType } from '../../services/utils/types';
+import { API_KEY } from '../services/constants/API_KEY';
+import { RequestType } from '../services/utils/types';
 
 export const useTrending = () => {
   return useQuery({

@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { useReviews } from '../../../hooks/details';
-import DataError from '../../errors/fetch';
-import Loading from '../../general/loading';
+import { useReviews } from '../../hooks/details';
+import DataError from '../errors/fetch';
+import Loading from '../general/loading';
 
 const Reviews = () => {
   let { movieId } = useParams();
