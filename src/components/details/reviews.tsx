@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { useReviews } from '../../../hooks/details';
-import DataError from '../../errors/fetch';
-import Loading from '../../general/loading';
+import { useReviews } from '../../hooks/details';
+import DataError from '../errors/fetch';
+import Loading from '../general/loading';
 
 const Reviews = () => {
   let { movieId } = useParams();
@@ -11,7 +11,7 @@ const Reviews = () => {
 
   if (error) return <DataError />;
 
-  return <div className='container mx-auto max-w-7xl'>Reviews</div>;
+  return <div className='container mx-auto max-w-7xl'>The 1 Reviews</div>;
 };
 
 export default Reviews;

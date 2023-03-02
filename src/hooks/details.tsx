@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import { API_KEY } from '../../services/constants/API_KEY';
+import { API_KEY } from '../services/constants/API_KEY';
 import {
   MovieCredits,
   MovieDetails,
   MovieRecommendations,
   MovieReviews,
-} from '../../services/utils/types';
+} from '../services/utils/types';
 
 export const useMovieDetails = (movieId: number) => {
   return useQuery({

@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { useCredits } from '../../../hooks/details';
-import DataError from '../../errors/fetch';
-import Loading from '../../general/loading';
+import { useCredits } from '../../hooks/details';
+import DataError from '../errors/fetch';
+import Loading from '../general/loading';
 
 const Credits = () => {
   let { movieId } = useParams();
@@ -11,9 +11,7 @@ const Credits = () => {
 
   if (error) return <DataError />;
 
-  return (
-    <div className='container mx-auto max-w-7xl'>There was 3 is Credits</div>
-  );
+  return <div className='container mx-auto max-w-7xl'>There is Credits</div>;
 };
 
 export default Credits;
