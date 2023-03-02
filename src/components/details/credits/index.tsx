@@ -11,7 +11,7 @@ const Credits = () => {
 
   if (error) return <DataError />;
 
-  return <div className='container mx-auto max-w-7xl'>Credits</div>;
+  return <div className='container mx-auto max-w-7xl'>The Credits</div>;
 };
 
 export default Credits;
