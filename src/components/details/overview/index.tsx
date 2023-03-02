@@ -35,7 +35,7 @@ const MovieDetails = () => {
             src={`https://image.tmdb.org/t/p/w400${data?.poster_path}`}
             alt='movie poster'
           />
-          <div className='flex flex-wrap gap-1 justify-center'>
+          <div className='flex flex-wrap gap-2 justify-center'>
             {data?.genres.map((genre) => (
               <p className='px-3 py-1 text-sm bg-neutral-800 rounded-lg'>
                 {genre.name}

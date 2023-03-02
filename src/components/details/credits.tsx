@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { useCredits } from '../../../hooks/details';
-import DataError from '../../errors/fetch';
-import Loading from '../../general/loading';
+import { useCredits } from '../../hooks/details';
+import DataError from '../errors/fetch';
+import Loading from '../general/loading';
 
 const Credits = () => {
   let { movieId } = useParams();
