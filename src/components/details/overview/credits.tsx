@@ -7,7 +7,7 @@ type Props = {
 const ReducedCredits: React.FC<Props> = ({ movieId }) => {
   const { data, isLoading, error } = useCredits(movieId);
 
-  return <div>ReducedCredits</div>;
+  return <div>Credits</div>;
 };
 
 export default ReducedCredits;
