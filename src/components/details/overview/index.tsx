@@ -11,6 +11,7 @@ import {
 } from '../../../services/functions';
 import ReducedCredits from './credits';
 import Keywords from './keywords';
+import ReducedReviews from './reviews';
 
 const MovieDetails = () => {
   let { movieId } = useParams();
@@ -40,7 +41,10 @@ const MovieDetails = () => {
             />
             <div className='flex flex-wrap gap-2 justify-center'>
               {data?.genres.map((genre) => (
-                <p className='px-3 py-1 text-sm bg-neutral-800 rounded-lg'>
+                <p
+                  key={genre.id}
+                  className='px-3 py-1 text-sm bg-neutral-800 rounded-lg'
+                >
                   {genre.name}
                 </p>
               ))}
@@ -75,26 +79,16 @@ const MovieDetails = () => {
             <div></div>
             <div>
               {data?.production_companies.map((company) => (
-                <p>{company.name}</p>
+                <p key={company.id}>{company.name}</p>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <div className='mx-auto container gap-12 max-w-7xl flex py-8'>
+      <div className='mx-auto container border-t border-neutral-800 gap-12 max-w-7xl py-8  flex'>
         <div className='w-3/4'>
-          <div className='mb-4 flex justify-between'>
-            <h1 className='text-lg font-semibold text-neutral-200'>
-              Top Billed Cast
-            </h1>
-            <Link
-              className='text-cyan-500 hover:text-cyan-400 transition duration-200'
-              to={`/movies/${movieId}/credits`}
-            >
-              View credits
-            </Link>
-          </div>
           <ReducedCredits movieId={movieId} />
+          <ReducedReviews movieId={movieId} />
         </div>
         <div className='flex flex-col gap-4'>
           <div>

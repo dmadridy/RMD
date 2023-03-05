@@ -100,10 +100,25 @@ export type MovieRecommendations = {
   total_results: number;
 };
 
+type ReviewsResults = {
+  author: string;
+  author_details: {
+    name: string;
+    username: string;
+    avatar_path: string;
+    rating: number;
+  };
+  content: string;
+  created_at: string;
+  id: string;
+  updated_at: string;
+  url: string;
+};
+
 export type MovieReviews = {
   id: number;
   page: number;
-  results: object[];
+  results: ReviewsResults[];
   total_pages: number;
   total_results: number;
 };
