@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import star from '../../../assets/icons/estrella.png';
 import link from '../../../assets/icons/link.png';
 import DataError from '../../errors/fetch';
