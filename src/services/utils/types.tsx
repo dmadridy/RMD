@@ -58,10 +58,39 @@ export type MovieDetails = {
   tagline: string;
 };
 
+type Cast = {
+  adult: boolean;
+  gender: number | null;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string | null;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  order: string;
+};
+
+type Crew = {
+  adult: boolean;
+  gender: number | null;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string | null;
+  credit_id: string;
+  department: string;
+  job: string;
+};
+
 export type MovieCredits = {
   id: string;
-  cast: object[];
-  crew: object[];
+  cast: Cast[];
+  crew: Crew[];
 };
 
 export type MovieRecommendations = {
@@ -71,10 +100,35 @@ export type MovieRecommendations = {
   total_results: number;
 };
 
+type ReviewsResults = {
+  author: string;
+  author_details: {
+    name: string;
+    username: string;
+    avatar_path: string;
+    rating: number;
+  };
+  content: string;
+  created_at: string;
+  id: string;
+  updated_at: string;
+  url: string;
+};
+
 export type MovieReviews = {
   id: number;
   page: number;
-  results: object[];
+  results: ReviewsResults[];
   total_pages: number;
   total_results: number;
+};
+
+type Keywords = {
+  id: number;
+  name: string;
+};
+
+export type MovieKeywords = {
+  id: number;
+  keywords: Keywords[];
 };
