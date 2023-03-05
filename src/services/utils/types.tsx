@@ -107,3 +107,13 @@ export type MovieReviews = {
   total_pages: number;
   total_results: number;
 };
+
+type Keywords = {
+  id: number;
+  name: string;
+};
+
+export type MovieKeywords = {
+  id: number;
+  keywords: Keywords[];
+};

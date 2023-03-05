@@ -3,6 +3,7 @@ import { API_KEY } from '../services/constants/API_KEY';
 import {
   MovieCredits,
   MovieDetails,
+  MovieKeywords,
   MovieRecommendations,
   MovieReviews,
 } from '../services/utils/types';
@@ -50,6 +51,18 @@ export const useReviews = (movieId: number) => {
       await (
         await fetch(
           `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+        )
+      ).json(),
+  });
+};
+
+export const useKeywords = (movieId: number) => {
+  return useQuery({
+    queryKey: [String(movieId) + '_keywords'],
+    queryFn: async (): Promise<MovieKeywords> =>
+      await (
+        await fetch(
+          `https://api.themoviedb.org/3/movie/${movieId}/keywords?api_key=${API_KEY}`
         )
       ).json(),
   });

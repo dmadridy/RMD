@@ -10,6 +10,7 @@ import {
   timeConvert,
 } from '../../../services/functions';
 import ReducedCredits from './credits';
+import Keywords from './keywords';
 
 const MovieDetails = () => {
   let { movieId } = useParams();
@@ -71,12 +72,7 @@ const MovieDetails = () => {
             </div>
             <p className='italic text-neutral-400 mb-4'>{data?.tagline}</p>
             <p className='mb-6'>{data?.overview}</p>
-            <div>
-              <p>{data && makeDollar(data.revenue)}</p>
-              <p>{data?.original_language}</p>
-              <p>{data && makeDollar(data.budget)}</p>
-              <p>{data?.status}</p>
-            </div>
+            <div></div>
             <div>
               {data?.production_companies.map((company) => (
                 <p>{company.name}</p>
@@ -85,15 +81,48 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
-      <div className='mx-auto container max-w-7xl flex'>
+      <div className='mx-auto container gap-12 max-w-7xl flex py-8'>
         <div className='w-3/4'>
-          <div className='flex justify-between'>
-            <h1>Top billed cast</h1>
-            <Link to={`/movies/${movieId}/credits`}>View credits</Link>
+          <div className='mb-4 flex justify-between'>
+            <h1 className='text-lg font-semibold text-neutral-200'>
+              Top Billed Cast
+            </h1>
+            <Link
+              className='text-cyan-500 hover:text-cyan-400 transition duration-200'
+              to={`/movies/${movieId}/credits`}
+            >
+              View credits
+            </Link>
           </div>
           <ReducedCredits movieId={movieId} />
         </div>
-        <div></div>
+        <div className='flex flex-col gap-4'>
+          <div>
+            <h1 className='font-semibold text-neutral-400'>Status</h1>
+            <p className='text-neutral-200'>{data?.status}</p>
+          </div>
+          <div>
+            <h1 className='font-semibold text-neutral-400'>
+              Original Language
+            </h1>
+            <p className='text-neutral-200'>{data?.original_language}</p>
+          </div>
+          <div>
+            <h1 className='font-semibold text-neutral-400'>Budget</h1>
+            <p className='text-neutral-200'>
+              {data && makeDollar(data.budget)}
+            </p>
+          </div>
+          <div>
+            <h1 className='font-semibold text-neutral-400'>Revenue</h1>
+            <p className='text-neutral-200'>
+              {data && makeDollar(data.revenue)}
+            </p>
+          </div>
+          <div>
+            <Keywords movieId={movieId} />
+          </div>
+        </div>
       </div>
     </div>
   );
