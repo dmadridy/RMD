@@ -4,6 +4,7 @@ import Loading from '../../general/loading';
 import star from '../../../assets/icons/estrella.png';
 import { reduceTitle, roundVoteAverage } from '../../../services/functions';
 import { Link } from 'react-router-dom';
+import noPicture from '../../../assets/images/nopicture.jpg';
 
 type Props = {
   movieId: string | undefined;
@@ -28,11 +29,15 @@ const Recommendations: React.FC<Props> = ({ movieId }) => {
           return (
             <Link to={`/movies/${each.id}`}>
               <div key={each.id}>
-                <div className='relative w-72'>
+                <div className='relative w-72 h-44 mb-2'>
                   <img
-                    className='w-full h-42 rounded-xl'
-                    src={`https://image.tmdb.org/t/p/w500${each.backdrop_path}`}
-                    alt=''
+                    className='w-full h-full rounded-xl text-cyan-500'
+                    src={
+                      each.backdrop_path
+                        ? `https://image.tmdb.org/t/p/w500${each.backdrop_path}`
+                        : noPicture
+                    }
+                    alt='No backdrop'
                   />
                   <div className='hover:bg-black rounded-xl hover:opacity-60 transition duration-300 absolute inset-0'></div>
                 </div>
