@@ -3,6 +3,7 @@ import DataError from '../../errors/fetch';
 import Loading from '../../general/loading';
 import star from '../../../assets/icons/estrella.png';
 import { Link } from 'react-router-dom';
+import noProfile from '../../../assets/images/noprofile.jpg';
 
 type Props = {
   movieId: string | undefined;
@@ -37,10 +38,14 @@ const ReducedReviews: React.FC<Props> = ({ movieId }) => {
             <div className='rounded-xl space-y-4 p-6 border border-neutral-700 bg-neutral-800'>
               <div className='flex justify-between'>
                 <div className='flex items-center gap-4'>
-                  <div className='w-8'>
+                  <div className='flex items-center'>
                     <img
-                      className='rounded-full'
-                      src={`https://image.tmdb.org/t/p/original${each.author_details.avatar_path}`}
+                      className='rounded-full h-12 w-12 bg-neutral-700'
+                      src={
+                        each.author_details.avatar_path
+                          ? `https://image.tmdb.org/t/p/original${each.author_details.avatar_path}`
+                          : noProfile
+                      }
                       alt=''
                     />
                   </div>

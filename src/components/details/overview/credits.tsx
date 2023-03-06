@@ -28,10 +28,10 @@ const ReducedCredits: React.FC<Props> = ({ movieId }) => {
           View credits
         </Link>
       </div>
-      <div className='flex overflow-auto space-x-3'>
+      <div className='flex overflow-auto space-x-3 pb-4'>
         {data?.cast.slice(0, 10).map((each) => {
           return (
-            <div key={each.id} className='pb-2'>
+            <div key={each.id}>
               <div className='w-36 shrink-0'>
                 <img
                   className='rounded-xl w-full h-52'

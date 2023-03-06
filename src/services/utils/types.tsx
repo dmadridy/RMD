@@ -95,7 +95,7 @@ export type MovieCredits = {
 
 export type MovieRecommendations = {
   page: number;
-  results: object[];
+  results: MovieType[];
   total_pages: number;
   total_results: number;
 };
