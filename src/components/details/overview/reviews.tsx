@@ -4,12 +4,15 @@ import Loading from '../../general/loading';
 import star from '../../../assets/icons/estrella.png';
 import { Link } from 'react-router-dom';
 import noProfile from '../../../assets/images/noprofile.jpg';
+import { useState } from 'react';
+import { formatDate, reduceContent } from '../../../services/functions';
 
 type Props = {
   movieId: string | undefined;
 };
 
 const ReducedReviews: React.FC<Props> = ({ movieId }) => {
+  const [seeMore, setSeeMore] = useState(false);
   const { data, isLoading, error } = useReviews(Number(movieId));
 
   if (error) return <DataError />;
@@ -35,7 +38,10 @@ const ReducedReviews: React.FC<Props> = ({ movieId }) => {
       <div>
         {data?.results.slice(0, 1).map((each) => {
           return (
-            <div className='rounded-xl space-y-4 p-6 border border-neutral-700 bg-neutral-800'>
+            <div
+              key={each.id}
+              className='rounded-xl space-y-4 p-6 border border-neutral-700 bg-neutral-800'
+            >
               <div className='flex justify-between'>
                 <div className='flex items-center gap-4'>
                   <div className='flex items-center'>
@@ -51,19 +57,30 @@ const ReducedReviews: React.FC<Props> = ({ movieId }) => {
                   </div>
                   <div>
                     <p>{each.author}</p>
-                    <p>{each.created_at}</p>
+                    <p className='text-neutral-400 text-sm'>
+                      {formatDate(each.created_at)}
+                    </p>
                   </div>
                 </div>
                 <div className='flex gap-1 items-center'>
                   <img className='w-4 h-4' src={star} alt='' />
-                  <p>{each.author_details.rating}/10</p>
+                  <p>
+                    {each.author_details.rating}
+                    <span className='text-neutral-400 text-xs'>/10</span>
+                  </p>
                 </div>
               </div>
               <div>
                 <p className='text-neutral-300 text-sm leading-relaxed'>
-                  {each.content}
+                  {reduceContent(each.content, seeMore)}
                 </p>
               </div>
+              <button
+                className='text-cyan-500 hover:text-cyan-400 duration-200'
+                onClick={() => setSeeMore(!seeMore)}
+              >
+                {seeMore ? 'See less' : 'See more'}
+              </button>
             </div>
           );
         })}

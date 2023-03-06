@@ -27,7 +27,7 @@ const Recommendations: React.FC<Props> = ({ movieId }) => {
       <div className='flex overflow-auto space-x-3 pb-4'>
         {data?.results.map((each) => {
           return (
-            <Link to={`/movies/${each.id}`}>
+            <Link key={each.id} to={`/movies/${each.id}`}>
               <div key={each.id}>
                 <div className='relative w-72 h-44 mb-2'>
                   <img

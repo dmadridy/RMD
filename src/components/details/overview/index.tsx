@@ -83,8 +83,8 @@ const MovieDetails = () => {
       <div className='mx-auto container border-t border-neutral-800 gap-12 max-w-7xl py-8  flex'>
         <div className='w-3/4'>
           <ReducedCredits movieId={movieId} />
-          <ReducedReviews movieId={movieId} />
           <Recommendations movieId={movieId} />
+          <ReducedReviews movieId={movieId} />
         </div>
         <div className='flex flex-col gap-4'>
           <div>
