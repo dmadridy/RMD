@@ -18,7 +18,7 @@ const Recommendations: React.FC<Props> = ({ movieId }) => {
   if (error) return <DataError />;
 
   return (
-    <div className='pt-8'>
+    <div className='py-8 border-t border-neutral-800'>
       <div className='mb-4 flex justify-between'>
         <h1 className='text-lg font-semibold text-neutral-200'>
           Recommendations
