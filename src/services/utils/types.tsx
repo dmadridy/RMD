@@ -95,7 +95,7 @@ export type MovieCredits = {
 
 export type MovieRecommendations = {
   page: number;
-  results: object[];
+  results: MovieType[];
   total_pages: number;
   total_results: number;
 };
@@ -105,7 +105,7 @@ type ReviewsResults = {
   author_details: {
     name: string;
     username: string;
-    avatar_path: string;
+    avatar_path: string | null;
     rating: number;
   };
   content: string;

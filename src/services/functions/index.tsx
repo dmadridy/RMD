@@ -24,3 +24,12 @@ export const timeConvert = (time: number) => {
   let minutes = time % 60;
   return hours + 'h' + ' ' + minutes + 'm';
 };
+
+export const reduceContent = (review: string, showMore: boolean) => {
+  if (!showMore) return review.slice(0, 850) + '...';
+  else return review;
+};
+
+export const formatDate = (date: string) => {
+  return new Date(date).toDateString();
+};

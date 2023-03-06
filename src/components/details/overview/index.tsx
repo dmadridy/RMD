@@ -12,6 +12,7 @@ import {
 import ReducedCredits from './credits';
 import Keywords from './keywords';
 import ReducedReviews from './reviews';
+import Recommendations from './recomendations';
 
 const MovieDetails = () => {
   let { movieId } = useParams();
@@ -76,18 +77,13 @@ const MovieDetails = () => {
             </div>
             <p className='italic text-neutral-400 mb-4'>{data?.tagline}</p>
             <p className='mb-6'>{data?.overview}</p>
-            <div></div>
-            <div>
-              {data?.production_companies.map((company) => (
-                <p key={company.id}>{company.name}</p>
-              ))}
-            </div>
           </div>
         </div>
       </div>
       <div className='mx-auto container border-t border-neutral-800 gap-12 max-w-7xl py-8  flex'>
         <div className='w-3/4'>
           <ReducedCredits movieId={movieId} />
+          <Recommendations movieId={movieId} />
           <ReducedReviews movieId={movieId} />
         </div>
         <div className='flex flex-col gap-4'>
