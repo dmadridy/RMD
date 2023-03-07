@@ -26,7 +26,7 @@ const Credits = () => {
           </div>
           {data?.cast.map((each) => {
             return (
-              <div className='flex gap-4 items-center'>
+              <div key={each.id} className='flex gap-4 items-center'>
                 <div className='w-16 h-16'>
                   <img
                     className='object-cover object-top w-full h-full rounded-full'
@@ -55,7 +55,7 @@ const Credits = () => {
           </div>
           {data?.crew.map((each) => {
             return (
-              <div className='flex gap-4 items-center'>
+              <div key={each.id} className='flex gap-4 items-center'>
                 <div className='w-16 h-16'>
                   <img
                     className='object-cover object-top w-full h-full rounded-full'
