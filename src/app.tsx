@@ -14,8 +14,8 @@ import MovieDetails from './components/details/overview';
 import Error404 from './components/errors/404';
 import ErrorElement from './components/errors/exceptions';
 import Root from './layouts/root';
-import Credits from './components/details/credits';
-import Reviews from './components/details/reviews';
+import Credits from './components/details/credits/credits';
+import Reviews from './components/details/credits/credits';
 import DetailsRoot from './components/details/root';
 
 const router = createBrowserRouter(

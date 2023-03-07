@@ -9,9 +9,9 @@ import {
   roundVoteAverage,
   timeConvert,
 } from '../../../services/functions';
-import ReducedCredits from './credits';
+import ReducedCredits from '../credits/reduced';
 import Keywords from './keywords';
-import ReducedReviews from './reviews';
+import ReducedReviews from '../reviews/reduced';
 import Recommendations from './recomendations';
 
 const MovieDetails = () => {

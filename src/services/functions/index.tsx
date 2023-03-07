@@ -25,9 +25,8 @@ export const timeConvert = (time: number) => {
   return hours + 'h' + ' ' + minutes + 'm';
 };
 
-export const reduceContent = (review: string, showMore: boolean) => {
-  if (!showMore) return review.slice(0, 850) + '...';
-  else return review;
+export const reduceContent = (review: string) => {
+  return review.slice(0, 850) + '...';
 };
 
 export const formatDate = (date: string) => {
