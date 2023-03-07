@@ -100,7 +100,7 @@ export type MovieRecommendations = {
   total_results: number;
 };
 
-type ReviewsResults = {
+export type ReviewsResults = {
   author: string;
   author_details: {
     name: string;

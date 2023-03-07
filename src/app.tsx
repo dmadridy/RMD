@@ -30,7 +30,6 @@ const router = createBrowserRouter(
         <Route path='/movies/:movieId/credits' element={<Credits />} />
         <Route path='/movies/:movieId/reviews' element={<Reviews />} />
       </Route>
-
       <Route path='*' element={<Error404 />} />
     </Route>
   )
