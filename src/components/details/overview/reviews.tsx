@@ -20,7 +20,7 @@ const ReducedReviews: React.FC<Props> = ({ movieId }) => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className='pt-8 border-t border-neutral-800'>
+    <div className='py-8 border-t border-neutral-800'>
       <div className='mb-4 flex justify-between'>
         <div className='flex space-x-2 items-center '>
           <h1 className='text-lg font-semibold text-neutral-200'>Reviews </h1>
