@@ -4,7 +4,7 @@ import Menu from '../../layouts/menu';
 import Pagination from './pagination';
 
 type Props = {
-  data: RequestType | undefined;
+  data: RequestType;
 };
 
 const Page: React.FC<Props> = ({ data }) => {

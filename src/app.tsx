@@ -17,7 +17,7 @@ import Root from './layouts/root';
 import Credits from './components/details/credits';
 import Reviews from './components/details/reviews';
 import DetailsRoot from './components/details/root';
-import Search from './components/general/search';
+import Search from './pages/search';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
