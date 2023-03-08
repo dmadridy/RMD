@@ -32,3 +32,7 @@ export const reduceContent = (review: string) => {
 export const formatDate = (date: string) => {
   return new Date(date).toDateString();
 };
+
+export const reduceOverview = (overview: string) => {
+  return overview.slice(0, 110) + '...';
+};
