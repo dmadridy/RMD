@@ -17,7 +17,7 @@ import Root from './layouts/root';
 import Credits from './components/details/credits';
 import Reviews from './components/details/reviews';
 import DetailsRoot from './components/details/root';
-import Search from './pages/search';
+import Search from './components/general/search';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,7 +26,7 @@ const router = createBrowserRouter(
       <Route path='popular' element={<PopularMovies />} />
       <Route path='upcoming' element={<UpcomingMovies />} />
       <Route path='top-rated' element={<TopRatedMovies />} />
-      <Route path='?query=:value' element={<Search />} />
+      <Route path='search' element={<Search />} />
       <Route path='movies/:movieId' element={<DetailsRoot />}>
         <Route index element={<MovieDetails />} />
         <Route path='/movies/:movieId/credits' element={<Credits />} />

@@ -1,6 +1,6 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/icons/mainlogo.png';
-import SearchForm from './form';
+import SearchForm from '../components/general/search/form';
 
 const Header = () => {
   return (
