@@ -10,7 +10,7 @@ type Props = {
 const Item: React.FC<Props> = ({ item }) => {
   return (
     <Link
-      className='transition duration-300 rounded-lg font-medium space-y-2 p-1.5 hover:bg-neutral-800'
+      className='transition duration-300 rounded-lg font-medium space-y-2 p-1.5 pb-3 hover:bg-neutral-800'
       to={`/movies/${item.id}`}
     >
       <div>

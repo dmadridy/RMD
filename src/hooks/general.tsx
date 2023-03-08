@@ -49,3 +49,15 @@ export const useUpcomingMovies = () => {
       ).json(),
   });
 };
+
+export const useSearch = (query: string | undefined) => {
+  return useQuery({
+    queryKey: [`${query}` + '_query'],
+    queryFn: async (): Promise<RequestType> =>
+      await (
+        await fetch(
+          `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+        )
+      ).json(),
+  });
+};

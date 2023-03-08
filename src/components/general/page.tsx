@@ -1,8 +1,7 @@
 import { RequestType } from '../../services/utils/types';
-import leftAarrow from '../../assets/icons/left-arrow.png';
-import rightArrow from '../../assets/icons/right-arrow.png';
 import Item from './item';
 import Menu from '../../layouts/menu';
+import Pagination from './pagination';
 
 type Props = {
   data: RequestType | undefined;
@@ -17,16 +16,7 @@ const Page: React.FC<Props> = ({ data }) => {
           <Item key={item.id} item={item} />
         ))}
       </div>
-      <div className='font-semibold text-neutral-400 py-16 flex space-x-12 justify-center'>
-        <button className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'>
-          <img className='w-3' src={leftAarrow} alt='' />
-          Previous
-        </button>
-        <button className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'>
-          Next
-          <img className='w-3' src={rightArrow} alt='' />
-        </button>
-      </div>
+      <Pagination />
     </div>
   );
 };

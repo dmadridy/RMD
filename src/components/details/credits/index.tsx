@@ -20,7 +20,7 @@ const Credits = () => {
         <div className='space-y-10'>
           <div className='text-neutral-200 font-semibold flex items-end gap-2'>
             <p className='text-xl'>Cast</p>
-            <span className='px-2 py-1 bg-neutral-800 rounded-lg text-sm'>
+            <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>
               {data?.cast.length}
             </span>
           </div>
@@ -49,7 +49,7 @@ const Credits = () => {
         <div className='space-y-10'>
           <div className='flex items-end gap-2 text-neutral-200 font-semibold'>
             <p className='text-xl'>Crew</p>
-            <span className='px-2 py-1 bg-neutral-800 rounded-lg text-sm'>
+            <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>
               {data?.crew.length}
             </span>
           </div>
