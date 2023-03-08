@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/icons/mainlogo.png';
-import SearchForm from '../components/general/search/form';
+import SearchForm from '../pages/search/form';
 
 const Header = () => {
   return (
