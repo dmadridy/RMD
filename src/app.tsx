@@ -18,12 +18,14 @@ import Credits from './components/details/credits';
 import Reviews from './components/details/reviews';
 import DetailsRoot from './components/details/root';
 import Search from './pages/search';
+import Reference from './pages/reference';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' errorElement={<ErrorElement />} element={<Root />}>
       <Route index element={<Home />} />
       <Route path='popular' element={<PopularMovies />} />
+      <Route path='reference' element={<Reference />} />
       <Route path='upcoming' element={<UpcomingMovies />} />
       <Route path='top-rated' element={<TopRatedMovies />} />
       <Route path='search' element={<Search />} />
