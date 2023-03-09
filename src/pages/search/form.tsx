@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
+import { createBrowserHistory } from 'history';
 import loop from '../../assets/icons/search.png';
 
 const SearchForm = () => {
-  const { register } = useForm({
+  let history = createBrowserHistory();
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       query: '',
     },
@@ -10,7 +12,7 @@ const SearchForm = () => {
 
   return (
     <form
-      action='/search'
+      onSubmit={() => history.push('/search')}
       className='flex duration-200 space-x-2 max-w-md w-full bg-neutral-800 border border-neutral-800 py-2 hover:border-neutral-700 px-3 rounded-xl'
     >
       <button type='submit'>
