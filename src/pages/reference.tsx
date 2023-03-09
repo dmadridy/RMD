@@ -10,18 +10,29 @@ const Reference = () => {
       <div className='grid grid-cols-2 gap-20 text-justify'>
         <div className='text-neutral-300'>
           <h2 className='mb-6 text-cyan-300 text-lg font-semibold'>Solved</h2>
-          <li>
-            How can i pass to my component MovieDetails the movie i want to
-            fetch?
-            <br />
-            Solution: By wrapping each Item component after maping them inside a
-            Link and asigning it the item.id value. Next, useParams hook allows
-            to get that value and fetch the data i want to render. The same
-            solution was implemented in Credits and Reviews component. The Route
-            must be created dinamically. For instance: path =
-            '/movies/:movieId'. This tells react that the parameter changes
-            depending on the Item we click on.
-          </li>
+          <div className='space-y-2'>
+            <li>
+              How can i pass to my component MovieDetails the movie i want to
+              fetch?
+              <br />
+              Solution: By wrapping each Item component after maping them inside
+              a Link and asigning it the item.id value. Next, useParams hook
+              allows to get that value and fetch the data i want to render. The
+              same solution was implemented in Credits and Reviews component.
+              The Route must be created dinamically. For instance: path =
+              '/movies/:movieId'. This tells react that the parameter changes
+              depending on the Item we click on.
+            </li>
+            <li>
+              In the MovieDetails component, the Overview Navlink remains active
+              despite we are in the Credits or Reviews component. <br />
+              Solution: Since both Navlinks share part of the same URL, react
+              router match the URL to the Route path, therefore Overview remains
+              active, by adding the 'end' prop to the Ovweview Navlink we ensure
+              that the active class is applied only when the to prop matches the
+              end of the current URL.
+            </li>
+          </div>
         </div>
         <div className='text-neutral-300'>
           <h2 className='mb-6 text-amber-400 text-lg font-semibold'>
