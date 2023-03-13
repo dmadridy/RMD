@@ -1,6 +1,7 @@
 import { RequestType } from '../../services/utils/types';
 import Item from './item';
 import Menu from '../../layouts/menu';
+import Pagination from './pagination';
 
 type Props = {
   data: RequestType | undefined;
@@ -15,6 +16,7 @@ const Page: React.FC<Props> = ({ data }) => {
           <Item key={item.id} item={item} />
         ))}
       </div>
+      <Pagination />
     </div>
   );
 };

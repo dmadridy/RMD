@@ -6,7 +6,7 @@ type PageContext = {
   previousPage: (page: number) => void;
 };
 
-export const PageContext = createContext({
+export const PageContext = createContext<PageContext>({
   page: 1,
   nextPage: (page: number) => {},
   previousPage: (page: number) => {},

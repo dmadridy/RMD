@@ -43,8 +43,8 @@ const router = createBrowserRouter(
 
 const App = () => {
   const [page, setPage] = useState(1);
-  const nextPage = (page: number) => setPage(page + 1);
-  const previousPage = (page: number) => setPage(page - 1);
+  const nextPage = () => setPage((prevPage) => prevPage + 1);
+  const previousPage = () => setPage((prevPage) => prevPage - 1);
 
   return (
     <PageContext.Provider value={{ page, nextPage, previousPage }}>

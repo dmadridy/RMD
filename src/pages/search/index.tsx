@@ -4,11 +4,14 @@ import Loading from '../../components/general/loading';
 import { useSearch } from '../../hooks/general';
 import SearchItem from './item';
 import Pagination from '../../components/general/pagination';
+import { useContext } from 'react';
+import { PageContext } from '../../context';
 
 const Search = () => {
   let [searchParam] = useSearchParams();
+  const { page } = useContext(PageContext);
   const query = searchParam.get('query');
-  const { data, isLoading, error } = useSearch(String(query));
+  const { data, isLoading, error } = useSearch(String(query), page);
 
   if (isLoading) return <Loading />;
 
