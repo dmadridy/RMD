@@ -15,7 +15,7 @@ import ReducedReviews from '../reviews/reduced';
 import Recommendations from './recomendations';
 
 const MovieDetails = () => {
-  let { movieId } = useParams();
+  const { movieId } = useParams();
   const { data, error, isLoading } = useMovieDetails(Number(movieId));
 
   if (isLoading) return <Loading />;

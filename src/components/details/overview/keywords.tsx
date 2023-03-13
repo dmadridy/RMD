@@ -17,13 +17,13 @@ const Keywords: React.FC<Props> = ({ movieId }) => {
     <div className='space-y-2'>
       <h1 className='font-semibold text-neutral-400'>Keywords</h1>
       <div className='flex flex-wrap items-center gap-2'>
-        {data?.keywords.map((each) => {
+        {data?.keywords.map(({ id, name }) => {
           return (
             <p
-              key={each.id}
+              key={id}
               className='align-center py-1 px-2 bg-neutral-800 rounded-lg text-xs text-neutral-300'
             >
-              {each.name}
+              {name}
             </p>
           );
         })}

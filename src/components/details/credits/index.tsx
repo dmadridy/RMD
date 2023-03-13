@@ -8,6 +8,7 @@ import SelectedMovie from '../selected-movie';
 const Credits = () => {
   let { movieId } = useParams();
   const { data, isLoading, error } = useCredits(Number(movieId));
+  const { cast, crew } = data || {};
 
   if (isLoading) return <Loading />;
 
@@ -17,64 +18,64 @@ const Credits = () => {
     <div className='container mx-auto max-w-7xl pb-8'>
       <SelectedMovie movideId={movieId} />
       <div className='grid grid-cols-2 py-8 '>
-        <div className='space-y-10'>
+        <ul className='space-y-10'>
           <div className='text-neutral-200 font-semibold flex items-end gap-2'>
-            <p className='text-xl'>Cast</p>
+            <h2 className='text-xl'>Cast</h2>
             <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>
               {data?.cast.length}
             </span>
           </div>
-          {data?.cast.map((each) => {
+          {cast?.map(({ id, name, character, profile_path }) => {
             return (
-              <div key={each.id} className='flex gap-4 items-center'>
+              <li key={id} className='flex gap-4 items-center'>
                 <div className='w-16 h-16'>
                   <img
                     className='object-cover object-top w-full h-full rounded-full'
                     src={
-                      each.profile_path
-                        ? `https://image.tmdb.org/t/p/w200${each.profile_path}`
+                      profile_path
+                        ? `https://image.tmdb.org/t/p/w200${profile_path}`
                         : noPicture
                     }
                     alt=''
                   />
                 </div>
                 <div>
-                  <p className='text-neutral-200'>{each.name}</p>
-                  <p className='text-neutral-400'>{each.character}</p>
+                  <p className='text-neutral-200'>{name}</p>
+                  <p className='text-neutral-400'>{character}</p>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
-        <div className='space-y-10'>
+        </ul>
+        <ul className='space-y-10'>
           <div className='flex items-end gap-2 text-neutral-200 font-semibold'>
-            <p className='text-xl'>Crew</p>
+            <h2 className='text-xl'>Crew</h2>
             <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>
               {data?.crew.length}
             </span>
           </div>
-          {data?.crew.map((each) => {
+          {crew?.map(({ id, name, job, profile_path }) => {
             return (
-              <div key={each.id} className='flex gap-4 items-center'>
+              <li key={id} className='flex gap-4 items-center'>
                 <div className='w-16 h-16'>
                   <img
                     className='object-cover object-top w-full h-full rounded-full'
                     src={
-                      each.profile_path
-                        ? `https://image.tmdb.org/t/p/w200${each.profile_path}`
+                      profile_path
+                        ? `https://image.tmdb.org/t/p/w200${profile_path}`
                         : noPicture
                     }
                     alt=''
                   />
                 </div>
                 <div>
-                  <p className='text-neutral-200'>{each.name}</p>
-                  <p className='text-neutral-400'>{each.job}</p>
+                  <p className='text-neutral-200'>{name}</p>
+                  <p className='text-neutral-400'>{job}</p>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </div>
   );

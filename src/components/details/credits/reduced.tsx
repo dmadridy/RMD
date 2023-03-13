@@ -8,8 +8,9 @@ type Props = {
   movieId: string | undefined;
 };
 
-const ReducedCredits: React.FC<Props> = ({ movieId }) => {
+const ReducedCredits: React.FC<Props> = ({ movieId = '' }) => {
   const { data, isLoading, error } = useCredits(Number(movieId));
+  const { cast } = data || {};
 
   if (isLoading) return <Loading />;
 
@@ -29,22 +30,22 @@ const ReducedCredits: React.FC<Props> = ({ movieId }) => {
         </Link>
       </div>
       <div className='flex overflow-auto space-x-3 pb-4'>
-        {data?.cast.slice(0, 10).map((each) => {
+        {cast?.slice(0, 10).map(({ id, profile_path, name, character }) => {
           return (
-            <div key={each.id}>
+            <div key={id}>
               <div className='w-36 shrink-0'>
                 <img
                   className='rounded-xl w-full h-52'
                   src={
-                    each.profile_path
-                      ? `https://image.tmdb.org/t/p/w200${each.profile_path}`
+                    profile_path
+                      ? `https://image.tmdb.org/t/p/w200${profile_path}`
                       : noProfile
                   }
-                  alt={`${each.name} image`}
+                  alt={`Image of ${name} as ${character}`}
                 />
               </div>
-              <p className='mt-2 text-neutral-200'>{each.name}</p>
-              <p className='text-neutral-400'>{each.character}</p>
+              <p className='mt-2 text-neutral-200'>{name}</p>
+              <p className='text-neutral-400'>{character}</p>
             </div>
           );
         })}

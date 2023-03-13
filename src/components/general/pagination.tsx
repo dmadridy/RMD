@@ -8,7 +8,7 @@ const Pagination = () => {
   return (
     <div className='font-semibold text-neutral-400 py-16 flex space-x-12 justify-center'>
       <button
-        disabled={page == 1}
+        disabled={page === 1}
         onClick={() => previousPage(page)}
         className={
           page == 1

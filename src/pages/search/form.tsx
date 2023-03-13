@@ -3,7 +3,7 @@ import { createBrowserHistory } from 'history';
 import loop from '../../assets/icons/search.png';
 
 const SearchForm = () => {
-  let history = createBrowserHistory();
+  const history = createBrowserHistory();
   const { register } = useForm({
     defaultValues: {
       query: '',

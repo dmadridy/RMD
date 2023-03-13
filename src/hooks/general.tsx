@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { API_KEY } from '../services/constants/API_KEY';
 import { RequestType } from '../services/utils/types';
 
-export const useTrending = (page_number: number) => {
+export const useTrendingMovies = (page_number: number) => {
   return useQuery({
     queryKey: ['Trending', page_number],
     queryFn: async (): Promise<RequestType> =>

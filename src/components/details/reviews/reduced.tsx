@@ -32,8 +32,8 @@ const ReducedReviews: React.FC<Props> = ({ movieId }) => {
         </Link>
       </div>
       <div>
-        {data?.results.slice(0, 1).map((each) => {
-          return <Review key={each.id} each={each} />;
+        {data?.results.slice(0, 1).map((item) => {
+          return <Review key={item.id} item={item} />;
         })}
       </div>
     </div>
