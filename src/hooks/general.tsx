@@ -2,13 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 import { API_KEY } from '../services/constants/API_KEY';
 import { RequestType } from '../services/utils/types';
 
-export const useTrending = () => {
+export const useTrending = (page_number: number) => {
   return useQuery({
-    queryKey: ['Trending'],
+    queryKey: ['Trending', page_number],
     queryFn: async (): Promise<RequestType> =>
       await (
         await fetch(
-          `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+          `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${page_number}`
         )
       ).json(),
   });
