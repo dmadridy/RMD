@@ -19,6 +19,8 @@ import Reviews from './components/details/reviews';
 import DetailsRoot from './components/details/root';
 import Search from './pages/search';
 import Reference from './pages/reference';
+import { useState } from 'react';
+import { PageContext } from './context';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,10 +42,16 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
+  const [page, setPage] = useState(1);
+  const nextPage = (page: number) => setPage(page + 1);
+  const previousPage = (page: number) => setPage(page - 1);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <PageContext.Provider value={{ page, nextPage, previousPage }}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </PageContext.Provider>
   );
 };
 
