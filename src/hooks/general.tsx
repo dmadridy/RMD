@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useLayoutEffect } from 'react';
 import { PageContext } from '../context';
 import { API_KEY } from '../services/constants/API_KEY';
 import { RequestType } from '../services/utils/types';
