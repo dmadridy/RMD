@@ -4,10 +4,12 @@ type PageContext = {
   page: number;
   nextPage: (page: number) => void;
   previousPage: (page: number) => void;
+  resetPage: () => void;
 };
 
 export const PageContext = createContext<PageContext>({
   page: 1,
   nextPage: (page: number) => {},
   previousPage: (page: number) => {},
+  resetPage: () => {},
 });

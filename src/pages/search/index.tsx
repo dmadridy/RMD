@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import DataError from '../../components/errors/fetch';
 import Loading from '../../components/general/loading';
-import { useSearch } from '../../hooks/general';
+import { useResetPage, useSearch } from '../../hooks/general';
 import SearchItem from './item';
 import Pagination from '../../components/general/pagination';
 import { useContext } from 'react';
@@ -11,6 +11,7 @@ const Search = () => {
   const [searchParam] = useSearchParams();
   const { page } = useContext(PageContext);
   const query = searchParam.get('query');
+  useResetPage();
   const { data, isLoading, error } = useSearch(String(query), page);
 
   if (isLoading) return <Loading />;

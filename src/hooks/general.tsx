@@ -1,4 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
+import { useContext, useEffect } from 'react';
+import { PageContext } from '../context';
 import { API_KEY } from '../services/constants/API_KEY';
 import { RequestType } from '../services/utils/types';
 
@@ -60,4 +62,11 @@ export const useSearch = (query: string, page_number: number) => {
         )
       ).json(),
   });
+};
+
+export const useResetPage = () => {
+  const { resetPage } = useContext(PageContext);
+  useEffect(() => {
+    resetPage();
+  }, []);
 };

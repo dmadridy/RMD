@@ -45,9 +45,10 @@ const App = () => {
   const [page, setPage] = useState(1);
   const nextPage = () => setPage((prevPage) => prevPage + 1);
   const previousPage = () => setPage((prevPage) => prevPage - 1);
+  const resetPage = () => setPage(1);
 
   return (
-    <PageContext.Provider value={{ page, nextPage, previousPage }}>
+    <PageContext.Provider value={{ page, nextPage, previousPage, resetPage }}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
