@@ -23,8 +23,8 @@ const Reviews = () => {
         </div>
       </div>
       <div className='space-y-8'>
-        {data?.results.map((each) => {
-          return <Review key={each.id} each={each} />;
+        {data?.results.map((item) => {
+          return <Review key={item.id} item={item} />;
         })}
       </div>
     </div>

@@ -8,19 +8,20 @@ import {
 import { Link } from 'react-router-dom';
 
 type Props = {
-  each: MovieType;
+  item: MovieType;
 };
 
-const SearchItem: React.FC<Props> = ({ each }) => {
+const SearchItem: React.FC<Props> = ({ item }) => {
+  const { id, poster_path, title, release_date, overview } = item;
   return (
-    <Link to={`/movies/${each.id}`}>
+    <Link to={`/movies/${id}`}>
       <div className='flex overflow-hidden border border-neutral-800 hover:border-neutral-700 rounded-lg hover:bg-neutral-800 duration-200'>
         <div className='w-72 h-full'>
           <img
             className='w-full h-full'
             src={
-              each.poster_path
-                ? `https://image.tmdb.org/t/p/w200${each.poster_path}`
+              poster_path
+                ? `https://image.tmdb.org/t/p/w200${poster_path}`
                 : noPicture
             }
             alt=''
@@ -29,14 +30,14 @@ const SearchItem: React.FC<Props> = ({ each }) => {
         <div className='gap-4 p-4 flex justify-between flex-col'>
           <div>
             <p className='text-lg text-neutral-100 font-semibold'>
-              {reduceTitle(each.title)}
+              {reduceTitle(title)}
             </p>
             <p className='text-sm text-neutral-400'>
-              {formatDate(each.release_date)}
+              {formatDate(release_date)}
             </p>
           </div>
           <p className='leading-6 justify-self-end text-sm text-neutral-200'>
-            {reduceOverview(each.overview)}
+            {reduceOverview(overview)}
           </p>
         </div>
       </div>

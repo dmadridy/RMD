@@ -1,14 +1,28 @@
+import { useContext } from 'react';
 import leftAarrow from '../../assets/icons/left-arrow.png';
 import rightArrow from '../../assets/icons/right-arrow.png';
+import { PageContext } from '../../context';
 
 const Pagination = () => {
+  const { previousPage, nextPage, page } = useContext(PageContext);
   return (
     <div className='font-semibold text-neutral-400 py-16 flex space-x-12 justify-center'>
-      <button className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'>
+      <button
+        disabled={page === 1}
+        onClick={() => previousPage(page)}
+        className={
+          page == 1
+            ? 'flex gap-2 items-center p-2 opacity-70 cursor-no-drop'
+            : 'flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'
+        }
+      >
         <img className='w-3' src={leftAarrow} alt='' />
         Previous
       </button>
-      <button className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'>
+      <button
+        onClick={() => nextPage(page)}
+        className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'
+      >
         Next
         <img className='w-3' src={rightArrow} alt='' />
       </button>
