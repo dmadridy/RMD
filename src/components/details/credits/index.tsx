@@ -4,6 +4,7 @@ import DataError from '../../errors/fetch';
 import noPicture from '../../../assets/images/noprofile.jpg';
 import Loading from '../../general/loading';
 import SelectedMovie from '../selected-movie';
+import Options from '../options';
 
 const Credits = () => {
   let { movieId } = useParams();
@@ -15,7 +16,8 @@ const Credits = () => {
   if (error) return <DataError />;
 
   return (
-    <div className='container mx-auto max-w-7xl pb-8'>
+    <div className='container mx-auto max-w-7xl py-8'>
+      <Options />
       <SelectedMovie movideId={movieId} />
       <div className='grid grid-cols-2 py-8 '>
         <ul className='space-y-10'>

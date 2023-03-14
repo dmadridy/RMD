@@ -68,6 +68,20 @@ const Reference = () => {
               currently using the Pagination component in the four different
               routes.
             </li>
+            <li>
+              When the i click on next or previous, if that query is already
+              cashed, the site will remain at the Y position it is, i want it to
+              restored to the top whenever i change routes, nested routes, or
+              page value.
+              <br />
+              On Pagination component, i implemented useLayoutEffect with
+              window.scrollTo(0, 0) so that everytime the page changes it will
+              scroll to the top. However, in order to achieve the same behavior
+              when the route changes, i needed to change createBrowserRouter for
+              Router, which is not the latest version of React Router and doesnt
+              support certain new APIs. I still need to solve this issue using
+              the latest tools.
+            </li>
           </div>
         </div>
       </div>

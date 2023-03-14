@@ -4,6 +4,7 @@ import DataError from '../../errors/fetch';
 import Loading from '../../general/loading';
 import Review from './review';
 import SelectedMovie from '../selected-movie';
+import Options from '../options';
 
 const Reviews = () => {
   let { movieId } = useParams();
@@ -14,7 +15,8 @@ const Reviews = () => {
   if (error) return <DataError />;
 
   return (
-    <div className='container mx-auto pb-16 max-w-7xl'>
+    <div className='container mx-auto pb-16 max-w-7xl py-8'>
+      <Options />
       <SelectedMovie movideId={movieId} />
       <div className='flex py-8 space-x-2 items-center '>
         <h1 className='text-lg font-semibold text-neutral-200'>Reviews </h1>

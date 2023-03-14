@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { createBrowserHistory } from 'history';
-import loop from '../../assets/icons/search.png';
+import search from '../../assets/icons/search.png';
 
 const SearchForm = () => {
   const history = createBrowserHistory();
@@ -13,12 +13,16 @@ const SearchForm = () => {
   return (
     <form
       onSubmit={() => history.push('/search')}
-      className='flex cursor-text duration-200 space-x-2 max-w-md w-full bg-neutral-800 border border-neutral-800 py-2 hover:border-neutral-700 px-3 rounded-xl'
+      className='flex relative cursor-text max-w-md w-full bg-neutral-800 rounded-xl'
     >
-      <img className='w-5 h-5' src={loop} alt='' />
+      <img
+        className='absolute top-1/2 left-3 transform -translate-y-1/2 w-5 h-5 pointer-events-none'
+        src={search}
+        alt=''
+      />
       <input
         {...register('query')}
-        className='focus:border-0 focus:border-blue-600 border-neutral-800 max-w-4xl text-neutral-200 placeholder:text-neutral-500 text-sm w-full bg-inherit'
+        className='outline-none border duration-200 border-neutral-800 focus:border-neutral-700 pl-10 hover:border-neutral-700 max-w-4xl rounded-xl p-2 text-neutral-300 placeholder:text-neutral-500 text-sm w-full bg-inherit'
         type='text'
         placeholder='Search your favorite movie...'
       />
