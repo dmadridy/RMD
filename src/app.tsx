@@ -1,11 +1,6 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './services/query-client';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages';
 import PopularMovies from './pages/popular';
 import UpcomingMovies from './pages/upcoming';
@@ -18,7 +13,7 @@ import Reviews from './components/details/reviews';
 import DetailsRoot from './components/details/root';
 import Search from './pages/search';
 import Reference from './pages/reference';
-import { useLayoutEffect, useState } from 'react';
+import { useState } from 'react';
 import { PageContext } from './context';
 
 const App = () => {
@@ -26,11 +21,6 @@ const App = () => {
   const nextPage = () => setPage((prevPage) => prevPage + 1);
   const previousPage = () => setPage((prevPage) => prevPage - 1);
   const resetPage = () => setPage(1);
-  const location = useLocation();
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
 
   return (
     <PageContext.Provider value={{ page, nextPage, previousPage, resetPage }}>

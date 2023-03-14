@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useContext, useEffect, useLayoutEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { PageContext } from '../context';
 import { API_KEY } from '../services/constants/API_KEY';
 import { RequestType } from '../services/utils/types';
@@ -64,9 +65,13 @@ export const useSearch = (query: string, page_number: number) => {
   });
 };
 
-export const useResetPage = () => {
+export const useResetPageAndScrollToTop = () => {
+  const location = useLocation();
   const { resetPage } = useContext(PageContext);
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   useEffect(() => {
     resetPage();
-  }, []);
+  }, [location]);
 };
