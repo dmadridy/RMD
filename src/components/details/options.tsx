@@ -5,7 +5,7 @@ const Options = () => {
   let { movieId } = useParams();
 
   return (
-    <div className='mx-auto container max-w-7xl space-x-2 pt-8 text-neutral-400 font-medium'>
+    <div className='mx-auto container max-w-7xl space-x-2 text-neutral-400 font-medium relative z-10'>
       <NavLink
         end
         className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
