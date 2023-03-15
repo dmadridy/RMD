@@ -25,33 +25,27 @@ const App = () => {
   return (
     <PageContext.Provider value={{ page, nextPage, previousPage, resetPage }}>
       <QueryClientProvider client={queryClient}>
-        <Routes>
-          <Route path='/' element={<Root />}>
-            <Route index element={<Home />} />
-            <Route path='popular' element={<PopularMovies />} />
-            <Route path='reference' element={<Reference />} />
-            <Route path='upcoming' element={<UpcomingMovies />} />
-            <Route path='top-rated' element={<TopRatedMovies />} />
-            <Route path='search' element={<Search />} />
-            <Route path='movies/:movieId' element={<DetailsRoot />}>
-              <Route index element={<MovieDetails />} />
-              <Route path='/movies/:movieId/credits' element={<Credits />} />
-              <Route path='/movies/:movieId/reviews' element={<Reviews />} />
+        <Router>
+          <Routes>
+            <Route path='/' element={<Root />}>
+              <Route index element={<Home />} />
+              <Route path='popular' element={<PopularMovies />} />
+              <Route path='reference' element={<Reference />} />
+              <Route path='upcoming' element={<UpcomingMovies />} />
+              <Route path='top-rated' element={<TopRatedMovies />} />
+              <Route path='search' element={<Search />} />
+              <Route path='movies/:movieId' element={<DetailsRoot />}>
+                <Route index element={<MovieDetails />} />
+                <Route path='/movies/:movieId/credits' element={<Credits />} />
+                <Route path='/movies/:movieId/reviews' element={<Reviews />} />
+              </Route>
+              <Route path='*' element={<Error404 />} />
             </Route>
-            <Route path='*' element={<Error404 />} />
-          </Route>
-        </Routes>
+          </Routes>
+        </Router>
       </QueryClientProvider>
     </PageContext.Provider>
   );
 };
 
-const WrappedApp = () => {
-  return (
-    <Router>
-      <App />
-    </Router>
-  );
-};
-
-export default WrappedApp;
+export default App;

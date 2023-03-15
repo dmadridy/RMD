@@ -5,6 +5,7 @@ import noPicture from '../../../assets/images/noprofile.jpg';
 import Loading from '../../general/loading';
 import SelectedMovie from '../selected-movie';
 import Options from '../options';
+import { Crew } from '../../../services/utils/types';
 
 const Credits = () => {
   let { movieId } = useParams();
@@ -14,6 +15,15 @@ const Credits = () => {
   if (isLoading) return <Loading />;
 
   if (error) return <DataError />;
+
+  const groupedCrew = crew?.reduce(
+    (result: Record<string, Crew[]>, member: Crew) => {
+      const key = member.department;
+      const departmentMembers = result[key] || [];
+      return { ...result, [key]: [...departmentMembers, member] };
+    },
+    {}
+  ) as Record<string, Crew[]>;
 
   return (
     <div className='container mx-auto max-w-7xl py-8'>
@@ -50,33 +60,39 @@ const Credits = () => {
           })}
         </ul>
         <ul className='space-y-10'>
-          <div className='flex items-end gap-2 text-neutral-200 font-semibold'>
-            <h2 className='text-xl'>Crew</h2>
-            <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>
-              {data?.crew.length}
-            </span>
-          </div>
-          {crew?.map(({ id, name, job, profile_path }) => {
-            return (
-              <li key={id} className='flex gap-4 items-center'>
-                <div className='w-16 h-16'>
-                  <img
-                    className='object-cover object-top w-full h-full rounded-full'
-                    src={
-                      profile_path
-                        ? `https://image.tmdb.org/t/p/w200${profile_path}`
-                        : noPicture
-                    }
-                    alt=''
-                  />
-                </div>
-                <div>
-                  <p className='text-neutral-200'>{name}</p>
-                  <p className='text-neutral-400'>{job}</p>
-                </div>
-              </li>
-            );
-          })}
+          {Object.keys(groupedCrew).map((department) => (
+            <>
+              <div className='flex items-end gap-2 text-neutral-200 font-semibold'>
+                <h2 className='text-xl'>{department}</h2>
+                <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>
+                  {groupedCrew[department].length}
+                </span>
+              </div>
+              {groupedCrew[department].map(
+                ({ id, name, job, profile_path }) => {
+                  return (
+                    <li key={id} className='flex gap-4 items-center'>
+                      <div className='w-16 h-16'>
+                        <img
+                          className='object-cover object-top w-full h-full rounded-full'
+                          src={
+                            profile_path
+                              ? `https://image.tmdb.org/t/p/w200${profile_path}`
+                              : noPicture
+                          }
+                          alt=''
+                        />
+                      </div>
+                      <div>
+                        <p className='text-neutral-200'>{name}</p>
+                        <p className='text-neutral-400'>{job}</p>
+                      </div>
+                    </li>
+                  );
+                }
+              )}
+            </>
+          ))}
         </ul>
       </div>
     </div>

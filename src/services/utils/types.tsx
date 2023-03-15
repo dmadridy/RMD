@@ -73,7 +73,7 @@ type Cast = {
   order: string;
 };
 
-type Crew = {
+export type Crew = {
   adult: boolean;
   gender: number | null;
   id: number;

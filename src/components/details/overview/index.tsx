@@ -34,7 +34,7 @@ const MovieDetails = () => {
         </div>
 
         <div className='absolute inset-0 bg-gradient-to-t from-transparent to-neutral-900 opacity-100'></div>
-        <div className='absolute inset-0 bg-neutral-900 opacity-40'></div>
+        <div className='absolute inset-0 bg-neutral-900 opacity-20'></div>
         <div className='absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-100'></div>
       </div>
       <div className='mx-auto container border-t border-neutral-800 gap-12 max-w-7xl py-8  flex'>
