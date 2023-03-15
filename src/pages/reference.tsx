@@ -1,12 +1,29 @@
 import Menu from '../layouts/menu';
+import rightArrow from '../assets/icons/right-arrow.png';
 
 const Reference = () => {
   return (
     <div className='mx-auto container pb-16 max-w-7xl'>
       <Menu />
-      <h1 className='text-xl text-neutral-100 font-semibold pb-8'>
-        Some of the problems encountered
-      </h1>
+      <div className='flex flex-col items-center'>
+        <h1 className='text-3xl mb-4 text-neutral-200 font-semibold'>
+          Some of the problems encountered
+        </h1>
+        <a
+          href='mailto:davidmadridpathway@gmail.com?subject=RMD Suggestion'
+          className=' mb-2 p-2 bg-neutral-800 rounded-xl px-4 hover:scale-105 hover:bg-neutral-700 transition duration-200'
+        >
+          Contact me for any suggestions!
+        </a>
+        <a
+          className='flex gap-2 p-2 items-center mb-16 text-neutral-400 font-semibold hover:text-neutral-300 hover:translate-x-3 duration-300'
+          target={'_blank'}
+          href='https://github.com/DavidMadridYepez/RMD'
+        >
+          <p>GO TO REPOSITORY</p>
+          <img className='w-3 h-3' src={rightArrow} alt='' />
+        </a>
+      </div>
       <div className='grid grid-cols-2 gap-20 text-justify'>
         <div className='text-neutral-300'>
           <h2 className='mb-6 text-cyan-300 text-lg font-semibold'>Solved</h2>
@@ -73,6 +90,20 @@ const Reference = () => {
               cashed, the site will remain at the Y position it is, i want it to
               restored to the top whenever i change routes, nested routes, or
               page value.
+              <br />
+              On Pagination component, i implemented useLayoutEffect with
+              window.scrollTo(0, 0) so that everytime the page changes it will
+              scroll to the top. However, in order to achieve the same behavior
+              when the route changes, i needed to change createBrowserRouter for
+              Router, which is not the latest version of React Router and doesnt
+              support certain new APIs. I still need to solve this issue using
+              the latest tools.
+            </li>
+            <li>
+              Crew is an array that contains several objects, with the
+              information about each person that participated in the movie. Each
+              of these objects have a property 'department'. I want to grouped
+              them by department under an h2 title.
               <br />
               On Pagination component, i implemented useLayoutEffect with
               window.scrollTo(0, 0) so that everytime the page changes it will

@@ -15,8 +15,8 @@ const Pagination = () => {
         disabled={page === 1}
         onClick={() => previousPage(page)}
         className={
-          page == 1
-            ? 'flex gap-2 items-center p-2 opacity-70 cursor-no-drop'
+          page === 1
+            ? 'flex gap-2 items-center p-2 opacity-50 cursor-no-drop'
             : 'flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'
         }
       >
