@@ -7,23 +7,25 @@ import SelectedMovie from '../selected-movie';
 import Options from '../options';
 import { Crew } from '../../../services/utils/types';
 
+
 const Credits = () => {
   let { movieId } = useParams();
   const { data, isLoading, error } = useCredits(Number(movieId));
   const { cast, crew } = data || {};
 
+  type indexSignature = {
+    [key: string]: Crew[];
+  };
+
+  const groupedCrew = crew?.reduce((result: indexSignature, member: Crew) => {
+    const key = member.department;
+    const departmentMembers = result[key] || [];
+    return { ...result, [key]: [...departmentMembers, member] };
+  }, {}) as indexSignature;
+
   if (isLoading) return <Loading />;
 
   if (error) return <DataError />;
-
-  const groupedCrew = crew?.reduce(
-    (result: Record<string, Crew[]>, member: Crew) => {
-      const key = member.department;
-      const departmentMembers = result[key] || [];
-      return { ...result, [key]: [...departmentMembers, member] };
-    },
-    {}
-  ) as Record<string, Crew[]>;
 
   return (
     <div className='container mx-auto max-w-7xl py-8'>
@@ -59,9 +61,9 @@ const Credits = () => {
             );
           })}
         </ul>
-        <ul className='space-y-10'>
+        <div className='space-y-10'>
           {Object.keys(groupedCrew).map((department) => (
-            <>
+            <ul className='space-y-10' key={department}>
               <div className='flex items-end gap-2 text-neutral-200 font-semibold'>
                 <h2 className='text-xl'>{department}</h2>
                 <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>
@@ -91,9 +93,9 @@ const Credits = () => {
                   );
                 }
               )}
-            </>
+            </ul>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

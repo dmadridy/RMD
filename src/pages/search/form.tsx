@@ -1,18 +1,24 @@
 import { useForm } from 'react-hook-form';
-import { createBrowserHistory } from 'history';
 import search from '../../assets/icons/search.png';
+import { useNavigate } from 'react-router-dom';
+
+type FormData = {
+  query: string;
+};
 
 const SearchForm = () => {
-  const history = createBrowserHistory();
-  const { register } = useForm({
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm<FormData>({
     defaultValues: {
       query: '',
     },
   });
 
+  const onSubmit = ({ query }: FormData) => navigate(`/search?=${query}`);
+
   return (
     <form
-      onSubmit={() => history.push('/search')}
+      onSubmit={handleSubmit(onSubmit)}
       className='flex relative cursor-text max-w-md w-full bg-neutral-800 rounded-xl'
     >
       <img
