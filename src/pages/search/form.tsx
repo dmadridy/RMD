@@ -14,7 +14,7 @@ const SearchForm = () => {
     },
   });
 
-  const onSubmit = ({ query }: FormData) => navigate(`/search?=${query}`);
+  const onSubmit = ({ query }: FormData) => navigate(`/search?query=${query}`);
 
   return (
     <form

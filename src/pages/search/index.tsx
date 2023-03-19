@@ -9,8 +9,8 @@ import { PageContext } from '../../context';
 
 const Search = () => {
   const [searchParam] = useSearchParams();
-  const { page } = useContext(PageContext);
   const query = searchParam.get('query');
+  const { page } = useContext(PageContext);
   const { data, isLoading, error } = useSearch(String(query), page);
 
   if (isLoading) return <Loading />;
