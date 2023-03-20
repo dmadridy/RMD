@@ -25,8 +25,10 @@ export const timeConvert = (time: number) => {
   return hours + 'h' + ' ' + minutes + 'm';
 };
 
-export const reduceContent = (review: string) => {
-  return review.slice(0, 850) + '...';
+export const reduceContent = (review: string, seeMore: boolean) => {
+  if (seeMore) return review;
+  else if (review.length > 900) return review.slice(0, 900) + '...';
+  else return review;
 };
 
 export const formatDate = (date: string) => {
@@ -34,5 +36,5 @@ export const formatDate = (date: string) => {
 };
 
 export const reduceOverview = (overview: string) => {
-  return overview.slice(0, 110) + '...';
+  return overview.slice(0, 100) + '...';
 };

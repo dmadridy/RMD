@@ -49,6 +49,17 @@ const Reference = () => {
               that the active class is applied only when the to prop matches the
               end of the current URL.
             </li>
+            <li>
+              Crew is an array that contains several objects, with the
+              information about each person that participated in the movie. Each
+              of these objects have a property 'department'. I want to grouped
+              them by department under an h2 title.
+              <br />
+              Solution: Using the reduce method, i was able to return an object
+              with the information grouped by each department. Then,
+              implementing Object.entries, followed by map, i iterated through
+              it to print the information under an h2 department title.
+            </li>
           </div>
         </div>
         <div className='text-neutral-300'>
@@ -91,27 +102,13 @@ const Reference = () => {
               restored to the top whenever i change routes, nested routes, or
               page value.
               <br />
-              On Pagination component, i implemented useLayoutEffect with
-              window.scrollTo(0, 0) so that everytime the page changes it will
-              scroll to the top. However, in order to achieve the same behavior
-              when the route changes, i needed to change createBrowserRouter for
-              Router, which is not the latest version of React Router and doesnt
-              support certain new APIs. I still need to solve this issue using
-              the latest tools.
-            </li>
-            <li>
-              Crew is an array that contains several objects, with the
-              information about each person that participated in the movie. Each
-              of these objects have a property 'department'. I want to grouped
-              them by department under an h2 title.
-              <br />
-              On Pagination component, i implemented useLayoutEffect with
-              window.scrollTo(0, 0) so that everytime the page changes it will
-              scroll to the top. However, in order to achieve the same behavior
-              when the route changes, i needed to change createBrowserRouter for
-              Router, which is not the latest version of React Router and doesnt
-              support certain new APIs. I still need to solve this issue using
-              the latest tools.
+              Context: On Pagination component, i implemented useLayoutEffect
+              with window.scrollTo(0, 0) so that everytime the page changes it
+              will scroll to the top. However, in order to achieve the same
+              behavior when the route changes, i needed to change
+              createBrowserRouter for Router, which is not the latest version of
+              React Router and doesnt support certain new APIs. I still need to
+              solve this issue using the latest tools.
             </li>
           </div>
         </div>

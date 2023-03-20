@@ -16,9 +16,9 @@ const SearchItem: React.FC<Props> = ({ item }) => {
   return (
     <Link to={`/movies/${id}`}>
       <div className='flex overflow-hidden border border-neutral-800 hover:border-neutral-700 rounded-lg hover:bg-neutral-800 duration-200'>
-        <div className='w-72 h-full'>
+        <div className='w-72 h-44'>
           <img
-            className='w-full h-full'
+            className='h-full'
             src={
               poster_path
                 ? `https://image.tmdb.org/t/p/w200${poster_path}`

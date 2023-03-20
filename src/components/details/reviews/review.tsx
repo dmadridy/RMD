@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { formatDate, reduceContent } from '../../../services/functions';
 import { ReviewsResults } from '../../../services/utils/types';
 import star from '../../../assets/icons/estrella.png';
@@ -9,6 +9,7 @@ type Props = {
 };
 
 const Review: React.FC<Props> = ({ item }) => {
+  const [seeMore, setSeeMore] = useState(false);
   const { id, author_details, created_at, content, author } = item;
   return (
     <div
@@ -43,9 +44,15 @@ const Review: React.FC<Props> = ({ item }) => {
       </div>
       <div>
         <p className='text-neutral-300 text-sm leading-relaxed'>
-          {reduceContent(content)}
+          {reduceContent(content, seeMore)}
         </p>
       </div>
+      <button
+        className='text-cyan-500 hover:text-cyan-400 duration-200'
+        onClick={() => setSeeMore(!seeMore)}
+      >
+        {seeMore ? 'See less' : 'See more'}
+      </button>
     </div>
   );
 };
