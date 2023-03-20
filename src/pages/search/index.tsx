@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import DataError from '../../components/errors/fetch';
 import Loading from '../../components/general/loading';
-import { useSearch } from '../../hooks/general';
+import { useSearch, useVerifyLength } from '../../hooks/general';
 import SearchItem from './item';
 import Pagination from '../../components/general/pagination';
 import { useContext } from 'react';
@@ -12,6 +12,7 @@ const Search = () => {
   const query = searchParam.get('query');
   const { page } = useContext(PageContext);
   const { data, isLoading, error } = useSearch(String(query), page);
+  const verifiedLength = useVerifyLength(data);
 
   if (isLoading) return <Loading />;
 
@@ -32,7 +33,7 @@ const Search = () => {
           return <SearchItem item={item} key={item.id} />;
         })}
       </div>
-      <Pagination />
+      <Pagination verifiedLength={verifiedLength} />
     </div>
   );
 };

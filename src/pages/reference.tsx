@@ -110,6 +110,19 @@ const Reference = () => {
               React Router and doesnt support certain new APIs. I still need to
               solve this issue using the latest tools.
             </li>
+            <li>
+              On Pagination component, when there are no more data to show, i
+              want to disable the Next button, so the user is incapable of going
+              foward incrementing the page value
+              <br />
+              Context: On Pagination component, i implemented useLayoutEffect
+              with window.scrollTo(0, 0) so that everytime the page changes it
+              will scroll to the top. However, in order to achieve the same
+              behavior when the route changes, i needed to change
+              createBrowserRouter for Router, which is not the latest version of
+              React Router and doesnt support certain new APIs. I still need to
+              solve this issue using the latest tools.
+            </li>
           </div>
         </div>
       </div>
