@@ -3,7 +3,11 @@ import leftAarrow from '../../assets/icons/left-arrow.png';
 import rightArrow from '../../assets/icons/right-arrow.png';
 import { PageContext } from '../../context';
 
-const Pagination = () => {
+type Props = {
+  verifiedLength: boolean;
+};
+
+const Pagination: React.FC<Props> = ({ verifiedLength }) => {
   const { previousPage, nextPage, page } = useContext(PageContext);
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -24,8 +28,13 @@ const Pagination = () => {
         Previous
       </button>
       <button
+        disabled={verifiedLength}
         onClick={() => nextPage(page)}
-        className='flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'
+        className={
+          verifiedLength === true
+            ? 'flex gap-2 items-center p-2 opacity-50 cursor-no-drop'
+            : 'flex gap-2 items-center p-2 hover:bg-neutral-800 rounded-lg transition duration-200'
+        }
       >
         Next
         <img className='w-3' src={rightArrow} alt='' />

@@ -75,3 +75,9 @@ export const useResetPageAndScrollToTop = () => {
     resetPage();
   }, [location]);
 };
+
+export const useVerifyLength = (data: RequestType | undefined) => {
+  if (data?.results === undefined) return true;
+  else if (data?.results.length >= 19) return false;
+  else return true;
+};
