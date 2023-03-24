@@ -19,6 +19,8 @@ const Main: React.FC<Props> = ({ data }) => {
     vote_count,
     tagline,
     overview,
+    production_companies,
+    production_countries,
   } = data || {};
   return (
     <div className='flex gap-20 container mx-auto max-w-7xl relative z-10'>
@@ -62,7 +64,29 @@ const Main: React.FC<Props> = ({ data }) => {
           <p className='text-neutral-400'>/10 &#x2022; {vote_count}</p>
         </div>
         <p className='italic text-neutral-400 mb-4'>{tagline}</p>
-        <p className='mb-6'>{overview}</p>
+        <p className='mb-12'>{overview}</p>
+        <div className='grid grid-cols-2 text-neutral-400'>
+          <div>
+            <h1 className='mb-2 font-semibold text-neutral-200'>
+              Production Companies
+            </h1>
+            <ul>
+              {production_companies?.slice(0, 2).map((each) => {
+                return <li key={each.id}>{each.name}</li>;
+              })}
+            </ul>
+          </div>
+          <div>
+            <h1 className='mb-2 font-semibold text-neutral-200'>
+              Production Countries
+            </h1>
+            <ul>
+              {production_countries?.slice(0, 2).map((each) => {
+                return <li key={each.name}>{each.name}</li>;
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

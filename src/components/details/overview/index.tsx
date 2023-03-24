@@ -19,6 +19,8 @@ const MovieDetails = () => {
 
   if (error) return <DataError />;
 
+  console.log(data);
+
   return (
     <div>
       <div
@@ -32,7 +34,6 @@ const MovieDetails = () => {
           <Options />
           <Main data={data} />
         </div>
-
         <div className='absolute inset-0 bg-gradient-to-t from-transparent to-neutral-900 opacity-100'></div>
         <div className='absolute inset-0 bg-neutral-900 opacity-20'></div>
         <div className='absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-100'></div>
