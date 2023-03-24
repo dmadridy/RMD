@@ -33,6 +33,10 @@ type Companies = {
   origin_country: string;
 };
 
+type Countries = {
+  name: string;
+};
+
 export type MovieDetails = {
   adult: boolean;
   backdrop_path: string;
@@ -46,7 +50,7 @@ export type MovieDetails = {
   popularity: number;
   poster_path: string;
   production_companies: Companies[];
-  prudction_countries: string[];
+  production_countries: Countries[];
   release_date: string;
   revenue: number;
   runtime: number;

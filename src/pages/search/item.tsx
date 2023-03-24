@@ -29,9 +29,7 @@ const SearchItem: React.FC<Props> = ({ item }) => {
         </div>
         <div className='gap-4 p-4 flex justify-between flex-col'>
           <div>
-            <p className='text-lg text-neutral-100 font-semibold'>
-              {reduceTitle(title)}
-            </p>
+            <p className='text-lg text-neutral-100 font-semibold'>{title}</p>
             <p className='text-sm text-neutral-400'>
               {formatDate(release_date)}
             </p>

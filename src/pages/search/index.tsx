@@ -28,7 +28,7 @@ const Search = () => {
           Explore {data?.total_results} {query} results
         </p>
       </div>
-      <div className='grid grid-cols-3 gap-10'>
+      <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-10'>
         {data?.results.map((item) => {
           return <SearchItem item={item} key={item.id} />;
         })}
