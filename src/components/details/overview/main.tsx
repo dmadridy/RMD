@@ -23,7 +23,7 @@ const Main: React.FC<Props> = ({ data }) => {
     production_countries,
   } = data || {};
   return (
-    <div className='flex gap-20 container mx-auto max-w-7xl relative z-10'>
+    <div className='md:flex gap-20 container mx-auto max-w-7xl relative z-10'>
       <div className='space-y-4 w-72 shrink min-w-0'>
         <img
           className='rounded-lg'

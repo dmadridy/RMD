@@ -6,8 +6,8 @@ import tmdblogo from '../assets/images/TMDBicon.svg';
 const Footer = () => {
   return (
     <footer className='py-12 border-t border-neutral-800'>
-      <div className='container mx-auto max-w-7xl gap-8 flex items-center justify-between'>
-        <div className='flex text-neutral-400 text-sm'>
+      <div className='container mx-auto max-w-7xl md:flex justify-between space-y-8 md:space-y-0'>
+        <div className='flex text-neutral-400 text-sm justify-center'>
           <p>© 2023 David Madrid.&nbsp;</p>
           <a
             className='flex items-center hover:text-white transition duration-100'
@@ -18,7 +18,7 @@ const Footer = () => {
             <img className='h-3' src={tmdblogo} alt='' />
           </a>
         </div>
-        <div className='space-x-6 flex'>
+        <div className='space-x-6 flex justify-center'>
           <a href='https://github.com/DavidMadridYepez' target='_blank'>
             <img className='w-5' src={github} alt='' />
           </a>

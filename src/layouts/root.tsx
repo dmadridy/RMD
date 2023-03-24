@@ -7,7 +7,7 @@ const Root = () => {
   useResetPageAndScrollToTop();
 
   return (
-    <div>
+    <div className='lg:px-10 md:px-6 px-4'>
       <Header />
       <Outlet />
       <Footer />

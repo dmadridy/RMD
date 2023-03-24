@@ -21,9 +21,9 @@ const Item: React.FC<Props> = ({ item }) => {
           alt='Image Poster'
         />
       </div>
-      <div className='flex justify-between'>
-        <div>
-          <p>{reduceTitle(title)}</p>
+      <div className='flex justify-between space-x-2'>
+        <div className='w-2/3'>
+          <p className='truncate'>{title}</p>
         </div>
         <div className='flex items-center space-x-2'>
           <img className='w-4 h-4' src={star} alt='' />

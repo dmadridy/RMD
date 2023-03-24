@@ -14,7 +14,7 @@ const Pagination: React.FC<Props> = ({ verifiedLength }) => {
   }, [page]);
 
   return (
-    <div className='font-semibold text-neutral-400 py-16 flex space-x-12 justify-center'>
+    <div className='font-semibold text-neutral-400 md:py-16 py-10 flex space-x-12 justify-center'>
       <button
         disabled={page === 1}
         onClick={() => previousPage(page)}

@@ -19,8 +19,6 @@ const MovieDetails = () => {
 
   if (error) return <DataError />;
 
-  console.log(data);
-
   return (
     <div>
       <div
