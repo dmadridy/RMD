@@ -19,7 +19,7 @@ const Footer = () => {
           </a>
         </div>
         <div className='space-x-6 flex justify-center'>
-          <a href='https://github.com/DavidMadridYepez' target='_blank'>
+          <a href='https://github.com/dmadridy' target='_blank'>
             <img className='w-5' src={github} alt='' />
           </a>
           <a href='https://www.instagram.com/dmadridy/' target='_blank'>
