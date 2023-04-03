@@ -16,4 +16,4 @@ export const userSlice = createSlice({
 });
 
 export const { logIn, logOut } = userSlice.actions;
-export const counterReducer = userSlice.reducer;
+export const userReducer = userSlice.reducer;
