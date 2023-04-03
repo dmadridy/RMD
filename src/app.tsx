@@ -1,6 +1,11 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './services/query-client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromChildren,
+  RouterProvider,
+} from 'react-router-dom';
 import Home from './pages';
 import PopularMovies from './pages/popular';
 import UpcomingMovies from './pages/upcoming';
@@ -17,6 +22,7 @@ import { useState } from 'react';
 import { PageContext } from './context';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import ErrorElement from './components/errors/exceptions';
 
 const App = () => {
   const [page, setPage] = useState(1);
@@ -24,34 +30,29 @@ const App = () => {
   const previousPage = () => setPage((prevPage) => prevPage - 1);
   const resetPage = () => setPage(1);
 
+  const router = createBrowserRouter(
+    createRoutesFromChildren(
+      <Route path='/' element={<Root />} errorElement={<ErrorElement />}>
+        <Route index element={<Home />} />
+        <Route path='popular' element={<PopularMovies />} />
+        <Route path='reference' element={<Reference />} />
+        <Route path='upcoming' element={<UpcomingMovies />} />
+        <Route path='top-rated' element={<TopRatedMovies />} />
+        <Route path='search' element={<Search />} />
+        <Route path='movies/:movieId' element={<DetailsRoot />}>
+          <Route index element={<MovieDetails />} />
+          <Route path='/movies/:movieId/credits' element={<Credits />} />
+          <Route path='/movies/:movieId/reviews' element={<Reviews />} />
+        </Route>
+        <Route path='*' element={<Error404 />} />
+      </Route>
+    )
+  );
   return (
     <Provider store={store}>
       <PageContext.Provider value={{ page, nextPage, previousPage, resetPage }}>
         <QueryClientProvider client={queryClient}>
-          <Router>
-            <Routes>
-              <Route path='/' element={<Root />}>
-                <Route index element={<Home />} />
-                <Route path='popular' element={<PopularMovies />} />
-                <Route path='reference' element={<Reference />} />
-                <Route path='upcoming' element={<UpcomingMovies />} />
-                <Route path='top-rated' element={<TopRatedMovies />} />
-                <Route path='search' element={<Search />} />
-                <Route path='movies/:movieId' element={<DetailsRoot />}>
-                  <Route index element={<MovieDetails />} />
-                  <Route
-                    path='/movies/:movieId/credits'
-                    element={<Credits />}
-                  />
-                  <Route
-                    path='/movies/:movieId/reviews'
-                    element={<Reviews />}
-                  />
-                </Route>
-                <Route path='*' element={<Error404 />} />
-              </Route>
-            </Routes>
-          </Router>
+          <RouterProvider router={router} />
         </QueryClientProvider>
       </PageContext.Provider>
     </Provider>
