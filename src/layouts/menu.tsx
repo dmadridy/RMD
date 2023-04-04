@@ -1,39 +1,49 @@
 import { NavLink } from 'react-router-dom';
 import { activeStyle, unactiveStyle } from '../assets/styles';
+import user from '../assets/images/user.png';
 
 const Menu = () => {
   return (
-    <div className='flex pt-8 mb-10 pb-2 text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
-      <NavLink
-        className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-        to='/'
-      >
-        Trending
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-        to='/popular'
-      >
-        Popular
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-        to='/top-rated'
-      >
-        Top Rated
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-        to='/upcoming'
-      >
-        Upcoming
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
-        to='/reference'
-      >
-        Reference
-      </NavLink>
+    <div className='flex justify-between'>
+      <div className='flex pt-8 mb-10 pb-2 text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
+        <NavLink
+          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
+          to='/'
+        >
+          Trending
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
+          to='/popular'
+        >
+          Popular
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
+          to='/top-rated'
+        >
+          Top Rated
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
+          to='/upcoming'
+        >
+          Upcoming
+        </NavLink>
+      </div>
+
+      <div className='flex pt-8 mb-10 pb-2 text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
+        <NavLink
+          className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
+          to='/reference'
+        >
+          Reference
+        </NavLink>
+        <button className='flex gap-1 items-center border-2 border-neutral-700 p-1 px-3 rounded-full hover:border-neutral-400 duration-300'>
+          <img className='w-6' src={user} alt='' />
+          Log In
+        </button>
+      </div>
     </div>
   );
 };
