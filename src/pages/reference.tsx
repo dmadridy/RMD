@@ -1,10 +1,8 @@
-import Menu from '../layouts/menu';
 import rightArrow from '../assets/icons/right-arrow.png';
 
 const Reference = () => {
   return (
-    <div className='mx-auto container pb-16 max-w-7xl'>
-      <Menu />
+    <div className='mx-auto container pb-16 max-w-7xl mt-8'>
       <div className='flex flex-col items-center'>
         <h1 className='text-3xl mb-4 text-neutral-200 font-semibold'>
           Some of the problems encountered
