@@ -6,11 +6,17 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      username: '',
+      password: '',
+    },
+  });
 
   const dispatch = useDispatch();
-  const onSubmit = () => dispatch(logIn());
+  const onSubmit = () => dispatch(logIn(getValues('username')));
 
   return (
     <form
