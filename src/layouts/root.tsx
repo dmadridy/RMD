@@ -3,6 +3,7 @@ import { useResetPageAndScrollToTop } from '../hooks/general';
 import Footer from './footer';
 import Header from './header';
 import Login from '../components/general/login';
+import Menu from './menu';
 
 const Root = () => {
   useResetPageAndScrollToTop();
@@ -10,7 +11,9 @@ const Root = () => {
   return (
     <>
       <Header />
+      <Menu />
       <Outlet />
+      <Login />
       <Footer />
     </>
   );

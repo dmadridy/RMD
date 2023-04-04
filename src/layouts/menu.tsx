@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 
 const Menu = () => {
-  const username = useSelector((state: RootState) => state.userStatus);
+  const username = useSelector((state: RootState) => state.user);
 
   return (
-    <div className='flex justify-between'>
-      <div className='flex pt-8 mb-10 pb-2 text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
+    <div className='flex justify-between container mx-auto max-w-7xl pt-8 pb-2 text-neutral-400 overflow-auto items-center font-medium'>
+      <div className='flex gap-2'>
         <NavLink
           className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
           to='/'
@@ -35,8 +35,7 @@ const Menu = () => {
           Upcoming
         </NavLink>
       </div>
-
-      <div className='flex pt-8 mb-10 pb-2 text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
+      <div className='flex gap-2'>
         <NavLink
           className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
           to='/reference'

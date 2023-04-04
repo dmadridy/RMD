@@ -21,24 +21,32 @@ const Login = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='bg-white w-fit text-black p-10'
+      className='max-w-md text-black p-8 rounded-xl bg-neutral-800 border border-neutral-700 font-semibold'
     >
-      <label htmlFor='username'>Username</label>
-      <input
-        className='block'
-        {...register('username', { required: 'Needs to put something here' })}
-        id='username'
-        type='text'
-      />
-      <label htmlFor='password'>Password</label>
-      <input
-        className='block'
-        {...register('password', { required: true })}
-        id='password'
-        type='password'
-      />
-      <div className='flex items-center justify-center'>
-        <button type='submit'>Log in</button>
+      <div className='mb-2 space-y-2'>
+        <label className='text-neutral-200' htmlFor='username'>
+          Username
+        </label>
+        <input
+          className='block outline-none border w-full duration-200 border-neutral-700 focus:border-neutral-600 hover:border-neutral-600 max-w-2xl rounded-lg p-2 text-neutral-300 placeholder:text-neutral-500 text-sm bg-neutral-700'
+          {...register('username', { required: 'Needs to put something here' })}
+          id='username'
+          type='text'
+        />
+      </div>
+      <div className='space-y-2 mb-4'>
+        <label className='text-neutral-200' htmlFor='password'>
+          Password
+        </label>
+        <input
+          className='block outline-none border w-full duration-200 border-neutral-700 focus:border-neutral-600 hover:border-neutral-600 max-w-2xl rounded-lg p-2 text-neutral-300 placeholder:text-neutral-500 text-sm bg-neutral-700'
+          {...register('password', { required: true })}
+          id='password'
+          type='password'
+        />
+      </div>
+      <div className='flex items-center text-neutral-200 hover:text-white duration-200 text-lg justify-center'>
+        <button type='submit'>Log In</button>
       </div>
     </form>
   );
