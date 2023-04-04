@@ -13,7 +13,6 @@ const Root = () => {
       <Header />
       <Menu />
       <Outlet />
-      <Login />
       <Footer />
     </>
   );
