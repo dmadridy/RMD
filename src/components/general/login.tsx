@@ -2,11 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../store/slices/user';
 
-type Props = {
-  setOpenForm: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-const Login: React.FC<Props> = ({ setOpenForm }) => {
+const Login = () => {
   const {
     register,
     handleSubmit,
@@ -22,7 +18,6 @@ const Login: React.FC<Props> = ({ setOpenForm }) => {
   const dispatch = useDispatch();
   const onSubmit = () => {
     dispatch(logIn(getValues('username')));
-    setOpenForm(false);
   };
 
   return (
