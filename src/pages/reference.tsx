@@ -108,13 +108,15 @@ const Reference = () => {
               React Router and doesnt support certain new APIs. I still need to
               solve this issue using the latest tools.
             </li>
+            <li>How can i avoid layout shifts on the first render?
+              <br />
+              Context: Images are loading little after the page has rendered, which is causing the content to move and create visual flickering. I need to fix it before.
+            </li>
             <div>
               To do
               <br />
-              <li>Update problems already solved</li>
               <li>Responsive Design</li>
               <li>Trailer Functionality. Intregate with Youtube</li>
-              <li>Use the latest version of Routering</li>
               <li>Manipulate Meta Title accordingly to current route</li>
             </div>
           </div>
