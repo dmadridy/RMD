@@ -17,12 +17,12 @@ const Modal: React.FC<Props> = ({ showing, setShowing }) => {
       leaveFrom='transform scale-100 opacity-100'
       leaveTo='transform scale-95 opacity-0'
     >
-      <Dialog className='relative z-50' onClose={() => setShowing(false)}>
+      <Dialog className='relative z-20' onClose={() => setShowing(false)}>
         <div className='fixed inset-0 bg-black/60' aria-hidden='true' />
         <div className='fixed inset-0 overflow-y-auto'>
           <div className='flex min-h-full flex items-center justify-center p-4'>
             <Dialog.Panel className='w-full max-w-sm'>
-              <Login />
+              <Login setShowing={setShowing} />
             </Dialog.Panel>
           </div>
         </div>
