@@ -5,8 +5,6 @@ import {
   createBrowserRouter,
   createRoutesFromChildren,
   RouterProvider,
-  redirect,
-  Navigate,
 } from 'react-router-dom';
 import Home from './pages';
 import PopularMovies from './pages/popular';
@@ -31,8 +29,6 @@ const App = () => {
   const nextPage = () => setPage((prevPage) => prevPage + 1);
   const previousPage = () => setPage((prevPage) => prevPage - 1);
   const resetPage = () => setPage(1);
-
-  const loggedIn = false;
 
   const router = createBrowserRouter(
     createRoutesFromChildren(
