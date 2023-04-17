@@ -22,7 +22,7 @@ const MovieDetails = () => {
   return (
     <div>
       <div
-        className='py-8 relative'
+        className='pb-8 relative'
         style={{
           backgroundImage: `url(${backdrop})`,
           backgroundSize: 'cover',

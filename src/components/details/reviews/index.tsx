@@ -15,7 +15,7 @@ const Reviews = () => {
   if (error) return <DataError />;
 
   return (
-    <div className='container mx-auto pb-16 max-w-7xl py-8'>
+    <div className='container mx-auto pb-16 max-w-7xl'>
       <Options />
       <SelectedMovie movideId={movieId} />
       <div className='flex py-8 space-x-2 items-center '>

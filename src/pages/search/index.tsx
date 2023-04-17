@@ -19,7 +19,7 @@ const Search = () => {
   if (error) return <DataError />;
 
   return (
-    <div className='mx-auto container max-w-7xl py-8'>
+    <div className='mx-auto container max-w-7xl pb-8'>
       <div className='space-y-2 text-center pb-12'>
         <h1 className='text-2xl first-letter:uppercase font-semibold text-neutral-100'>
           {query}
