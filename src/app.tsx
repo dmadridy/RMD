@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
   createRoutesFromChildren,
   RouterProvider,
+  Navigate,
 } from 'react-router-dom';
 import Home from './pages';
 import PopularMovies from './pages/popular';
@@ -16,19 +17,21 @@ import Root from './layouts/root';
 import Credits from './components/details/credits';
 import Reviews from './components/details/reviews';
 import DetailsRoot from './components/details/root';
-import Search from './pages/search';
+import Search from './features/search';
 import Reference from './pages/reference';
 import { useState } from 'react';
 import { PageContext } from './context';
-import { Provider } from 'react-redux';
-import { store } from './store';
+import { Provider, useSelector } from 'react-redux';
+import { RootState, store } from './store';
 import ErrorElement from './components/errors/exceptions';
+import Profile from './pages/profile';
 
 const App = () => {
   const [page, setPage] = useState(1);
   const nextPage = () => setPage((prevPage) => prevPage + 1);
   const previousPage = () => setPage((prevPage) => prevPage - 1);
   const resetPage = () => setPage(1);
+  const user = useSelector((state: RootState) => state.user);
 
   const router = createBrowserRouter(
     createRoutesFromChildren(
@@ -39,6 +42,10 @@ const App = () => {
         <Route path='upcoming' element={<UpcomingMovies />} />
         <Route path='top-rated' element={<TopRatedMovies />} />
         <Route path='search' element={<Search />} />
+        <Route
+          path='profile/:username'
+          element={user.status ? <Profile /> : <Navigate to='/' />}
+        />
         <Route path='movies/:movieId' element={<DetailsRoot />}>
           <Route index element={<MovieDetails />} />
           <Route path='/movies/:movieId/credits' element={<Credits />} />
@@ -49,13 +56,11 @@ const App = () => {
     )
   );
   return (
-    <Provider store={store}>
-      <PageContext.Provider value={{ page, nextPage, previousPage, resetPage }}>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </PageContext.Provider>
-    </Provider>
+    <PageContext.Provider value={{ page, nextPage, previousPage, resetPage }}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </PageContext.Provider>
   );
 };
 

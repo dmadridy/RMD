@@ -7,7 +7,6 @@ import SelectedMovie from '../selected-movie';
 import Options from '../options';
 import { Crew } from '../../../services/utils/types';
 
-
 const Credits = () => {
   let { movieId } = useParams();
   const { data, isLoading, error } = useCredits(Number(movieId));
@@ -28,7 +27,7 @@ const Credits = () => {
   if (error) return <DataError />;
 
   return (
-    <div className='container mx-auto max-w-7xl py-8'>
+    <div className='container mx-auto max-w-7xl pb-8'>
       <Options />
       <SelectedMovie movideId={movieId} />
       <div className='grid grid-cols-2 py-8 '>
