@@ -1,5 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react';
-import Login from './login';
+import Login from './login-form';
 
 type Props = {
   showing: boolean;

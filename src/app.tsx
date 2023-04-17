@@ -23,6 +23,7 @@ import { PageContext } from './context';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import ErrorElement from './components/errors/exceptions';
+import Profile from './pages/profile';
 
 const App = () => {
   const [page, setPage] = useState(1);
@@ -39,6 +40,7 @@ const App = () => {
         <Route path='upcoming' element={<UpcomingMovies />} />
         <Route path='top-rated' element={<TopRatedMovies />} />
         <Route path='search' element={<Search />} />
+        <Route path='profile/:username' element={<Profile />} />
         <Route path='movies/:movieId' element={<DetailsRoot />}>
           <Route index element={<MovieDetails />} />
           <Route path='/movies/:movieId/credits' element={<Credits />} />

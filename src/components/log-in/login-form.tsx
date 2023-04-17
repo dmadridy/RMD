@@ -6,7 +6,7 @@ type Props = {
   setShowing: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Login: React.FC<Props> = ({ setShowing }) => {
+const LoginForm: React.FC<Props> = ({ setShowing }) => {
   const {
     register,
     handleSubmit,
@@ -68,4 +68,4 @@ const Login: React.FC<Props> = ({ setShowing }) => {
   );
 };
 
-export default Login;
+export default LoginForm;
