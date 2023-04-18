@@ -6,5 +6,7 @@ RMDB allows the user to discover and browse movies, as well as navigate through 
 
 ## Installation
 
-npm i
-npm run dev
+After cloning the repo, just type:
+
+- npm i
+- npm run dev
