@@ -8,9 +8,9 @@ import {
 const Menu = () => {
   return (
     <div
-      className={`${responsivePadding} flex justify-between max-w-7xl container mx-auto`}
+      className={`${responsivePadding} md:flex justify-between max-w-7xl container mx-auto pt-8 mb-10 pb-2`}
     >
-      <div className='flex pt-8 mb-10 pb-2 text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
+      <div className='flex text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
         <NavLink
           className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
           to='/'
@@ -36,7 +36,7 @@ const Menu = () => {
           Upcoming
         </NavLink>
       </div>
-      <div className='flex pt-8 mb-10 pb-2 text-neutral-400 overflow-auto items-center font-medium gap-2 whitespace-nowrap'>
+      <div className='flex text-neutral-400 overflow-auto items-center font-medium gap-2'>
         <NavLink
           className={({ isActive }) => (isActive ? activeStyle : unactiveStyle)}
           to='/reference'

@@ -16,10 +16,10 @@ const LogInButton = () => {
       ) : (
         <button
           onClick={() => setShowing(true)}
-          className='flex items-center gap-2 md:p-1 md:px-3 hover:text-neutral-200 duration-300'
+          className='flex items-center gap-2 md:px-3 md:py-1 p-1 whitespace-nowrap hover:text-neutral-200 duration-300'
         >
           <img className='w-6' src={userImg} alt='' />
-          <p className='whitespace-nowrap hidden sm:block'>Log In</p>
+          <p className='hidden md:block'>Log In</p>
         </button>
       )}
       <Modal showing={showing} setShowing={setShowing} />

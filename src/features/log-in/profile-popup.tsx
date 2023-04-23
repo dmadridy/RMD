@@ -13,9 +13,9 @@ const ProfilePopUp: React.FC<Props> = ({ username }) => {
 
   return (
     <Popover className='relative'>
-      <Popover.Button className='flex items-center gap-2 p-1 px-3 duration-300 hover:text-neutral-200'>
+      <Popover.Button className='flex items-center gap-2 md:py-1 md:px-3 p-1 duration-300 hover:text-neutral-200'>
         <img className='w-6' src={userImg} alt='' />
-        <p>{username}</p>
+        <p className='hidden md:block'>{username}</p>
       </Popover.Button>
       <Transition
         enter='transition duration-100 ease-out'
@@ -25,7 +25,7 @@ const ProfilePopUp: React.FC<Props> = ({ username }) => {
         leaveFrom='transform scale-100 opacity-100'
         leaveTo='transform scale-95 opacity-0'
       >
-        <Popover.Panel className='p-3 rounded mt-2 absolute z-10 bg-neutral-800 w-full grid grid-row drop-shadow-md'>
+        <Popover.Panel className='-left-16 sm:-left-14 md:left-0 p-3 rounded mt-2 absolute z-10 bg-neutral-800 whitespace-nowrap w-fit grid grid-row drop-shadow-md'>
           <Link
             className='duration-300 hover:text-neutral-200'
             to={`/profile/${username}`}

@@ -10,7 +10,7 @@ const Header = () => {
       <nav
         className={`flex items-center justify-between container mx-auto max-w-7xl ${responsivePadding}`}
       >
-        <div className='w-full flex items-center space-x-4 '>
+        <div className='max-w-xl w-full flex items-center space-x-4 '>
           <NavLink to='/'>
             <img src={logo} alt='' />
           </NavLink>
