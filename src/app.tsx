@@ -21,8 +21,8 @@ import Search from './features/search';
 import Reference from './pages/reference';
 import { useState } from 'react';
 import { PageContext } from './context';
-import { Provider, useSelector } from 'react-redux';
-import { RootState, store } from './store';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
 import ErrorElement from './components/errors/exceptions';
 import Profile from './pages/profile';
 

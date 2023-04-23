@@ -9,6 +9,7 @@ import Recommendations from './recomendations';
 import Column from './column';
 import Main from './main';
 import Options from '../options';
+import { responsivePadding } from '../../../assets/styles';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -36,8 +37,10 @@ const MovieDetails = () => {
         <div className='absolute inset-0 bg-neutral-900 opacity-20'></div>
         <div className='absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-100'></div>
       </div>
-      <div className='mx-auto container border-t border-neutral-800 gap-12 max-w-7xl py-8  flex'>
-        <div className='w-3/4'>
+      <div
+        className={`mx-auto container border-t border-neutral-800 gap-12 max-w-7xl py-8 md:flex ${responsivePadding}`}
+      >
+        <div className='md:w-3/4'>
           <ReducedCredits movieId={movieId} />
           <Recommendations movieId={movieId} />
           <ReducedReviews movieId={movieId} />

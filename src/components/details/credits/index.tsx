@@ -6,6 +6,7 @@ import Loading from '../../general/loading';
 import SelectedMovie from '../selected-movie';
 import Options from '../options';
 import { Crew } from '../../../services/utils/types';
+import { responsivePadding } from '../../../assets/styles';
 
 const Credits = () => {
   let { movieId } = useParams();
@@ -27,11 +28,11 @@ const Credits = () => {
   if (error) return <DataError />;
 
   return (
-    <div className='container mx-auto max-w-7xl pb-8'>
+    <div className={`${responsivePadding} container mx-auto max-w-7xl pb-8`}>
       <Options />
       <SelectedMovie movideId={movieId} />
-      <div className='grid grid-cols-2 py-8 '>
-        <ul className='space-y-10'>
+      <div className='grid md:grid-cols-2 py-8 '>
+        <ul className='space-y-10 mb-10 md:mb-0'>
           <div className='text-neutral-200 font-semibold flex items-end gap-2'>
             <h2 className='text-xl'>Cast</h2>
             <span className='px-2 py-1 bg-neutral-800 rounded-lg text-xs'>

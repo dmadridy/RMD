@@ -2,11 +2,14 @@ import github from '../assets/icons/github.png';
 import instagram from '../assets/icons/instagram.png';
 import linkedin from '../assets/icons/linkedin.png';
 import tmdblogo from '../assets/images/TMDBicon.svg';
+import { responsivePadding } from '../assets/styles';
 
 const Footer = () => {
   return (
     <footer className='py-12 border-t border-neutral-800'>
-      <div className='container mx-auto max-w-7xl md:flex justify-between space-y-8 md:space-y-0'>
+      <div
+        className={`${responsivePadding} container mx-auto max-w-7xl md:flex justify-between space-y-8 md:space-y-0`}
+      >
         <div className='flex text-neutral-400 text-sm justify-center'>
           <p>© 2023 David Madrid.&nbsp;</p>
           <a

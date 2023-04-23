@@ -1,9 +1,12 @@
 import rightArrow from '../assets/icons/right-arrow.png';
+import { responsivePadding } from '../assets/styles';
 
 const Reference = () => {
   return (
-    <div className='mx-auto container pb-16 max-w-7xl mt-8'>
-      <div className='flex flex-col items-center'>
+    <div
+      className={`${responsivePadding} mx-auto container pb-16 max-w-7xl mt-8`}
+    >
+      <div className='flex flex-col text-center items-center'>
         <h1 className='text-3xl mb-4 text-neutral-200 font-semibold'>
           Some of the problems encountered
         </h1>
@@ -22,7 +25,7 @@ const Reference = () => {
           <img className='w-3 h-3' src={rightArrow} alt='' />
         </a>
       </div>
-      <div className='grid grid-cols-2 gap-20 text-justify'>
+      <div className='grid md:grid-cols-2 gap-20 text-justify'>
         <div className='text-neutral-300'>
           <h2 className='mb-6 text-cyan-300 text-lg font-semibold'>Solved</h2>
           <div className='space-y-2'>

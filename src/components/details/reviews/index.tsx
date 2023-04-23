@@ -5,6 +5,7 @@ import Loading from '../../general/loading';
 import Review from './review';
 import SelectedMovie from '../selected-movie';
 import Options from '../options';
+import { responsivePadding } from '../../../assets/styles';
 
 const Reviews = () => {
   let { movieId } = useParams();
@@ -15,7 +16,7 @@ const Reviews = () => {
   if (error) return <DataError />;
 
   return (
-    <div className='container mx-auto pb-16 max-w-7xl'>
+    <div className={`${responsivePadding} container mx-auto max-w-7xl pb-16`}>
       <Options />
       <SelectedMovie movideId={movieId} />
       <div className='flex py-8 space-x-2 items-center '>
