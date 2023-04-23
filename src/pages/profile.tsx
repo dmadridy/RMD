@@ -1,11 +1,14 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
+import { responsivePadding } from '../assets/styles';
 
 const Profile = () => {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <div className='max-w-7xl space-y-4 container mx-auto pb-12'>
+    <div
+      className={`${responsivePadding} max-w-7xl space-y-4 container mx-auto pb-12`}
+    >
       <h1 className='font-semibold text-xl text-neutral-100'>
         Hi {user.name}!
       </h1>
