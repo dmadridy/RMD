@@ -1,10 +1,6 @@
 import { MovieType } from '../../services/utils/types';
 import noPicture from '../../assets/images/nopicture.jpg';
-import {
-  formatDate,
-  reduceOverview,
-  reduceTitle,
-} from '../../services/functions';
+import { formatDate, reduceOverview } from '../../services/functions';
 import { Link } from 'react-router-dom';
 
 type Props = {
